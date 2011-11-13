@@ -624,7 +624,7 @@ abstract class AutomatonSpecification implements Cloneable  {
     }
     public AutomatonSpecification makeOneLoopAutomaton(char c) {
         AutomatonSpecification spec = new NaiveAutomatonSpecification();
-    	State q0 = addState();
+        State q0 = addState();
         addLoop(q0, new CharTransitionLabel(c));
         markAsInitial(q0);
         markAsFinal(q0);
