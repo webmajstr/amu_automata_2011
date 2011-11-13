@@ -622,11 +622,13 @@ abstract class AutomatonSpecification implements Cloneable  {
         mini.insert(q5, this);
         return mini;
     }
-    public void makeOneLoopAutomaton(char c) {
-        State q0 = addState();
+    public makeOneLoopAutomaton(char c) {
+    	AutomatonSpecification spec = new NaiveAutomatonSpecification();
+    	State q0 = addState();
         addLoop(q0, new CharTransitionLabel(c));
         markAsInitial(q0);
         markAsFinal(q0);
+        return spec;
     }
 
     /**
