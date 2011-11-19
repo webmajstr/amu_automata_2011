@@ -716,7 +716,7 @@ public class TestAutomatonSpecification extends TestCase {
         assertFalse(automat.isEmpty());
     }
     /**
-     *Test metody uselessStates() zwracającej true jesli automat posiada zbedne stany.
+     *Test metody uselessStates() zwracajacej true jesli automat posiada zbedne stany.
      */
     public final void testUselessStates(){
     	NaiveAutomatonSpecification spec = new NaiveAutomatonSpecification();
