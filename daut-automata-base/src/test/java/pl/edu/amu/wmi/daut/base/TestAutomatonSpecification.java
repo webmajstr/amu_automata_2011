@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.daut.base;
+﻿package pl.edu.amu.wmi.daut.base;
 import java.util.List;
 import java.util.Arrays;
 
@@ -714,5 +714,41 @@ public class TestAutomatonSpecification extends TestCase {
         AutomatonSpecification automat = new NaiveAutomatonSpecification();
         State s1 = automat.addState();
         assertFalse(automat.isEmpty());
+    }
+    /**
+     *Test metody uselessStates() zwracającej true jesli automat posiada zbedne stany.
+     */
+    public final void testUselessStates(){
+    	NaiveAutomatonSpecification spec = new NaiveAutomatonSpecification();
+    	//Test 1
+    	assertFalse(spec.uselessStates());
+    	//Test 2
+    	State q0 = spec.addState();
+    	spec.markAsInitial(q0);
+    	spec.markAsFinal(q0);
+    	assertFalse(spec.uselessStates());
+    	//Test 3
+    	State q1 = spec.addState();
+    	spec.addTransition(q0, q0, new CharTransitionLabel('a'));
+    	assertTrue(spec.uselessStates());
+    	//Test 4
+    	State q2 = spec.addState();
+    	spec.addTransition(q2, q1, new CharTransitionLabel('d'));
+    	assertTrue(spec.uselessStates());
+    	//Test 5
+    	NaiveAutomatonSpecification spec2 = new NaiveAutomatonSpecification();
+    	State q0 = spec2.addState();
+    	State q1 = spec2.addState();
+    	State q2 = spec2.addState();
+    	State q3 = spec2.addState();
+    	spec2.addTransition(q0, q1, new CharTransitionLabel('a'));
+    	spec2.addTransition(q0, q2, new CharTransitionLabel('b'));
+    	spec2.addTransition(q2, q3, new CharTransitionLabel('d'));
+    	spec2.markAsInitial(q0);
+    	spec2.markAsFinal(q3);
+    	assertTrue(spec2.uselessStates());
+    	//Test 6
+    	spec2.addTransition(q1, q3, new CharTransitionLabel('c'));
+    	assertFalse(spec2.uselessStates());
     }
 }
