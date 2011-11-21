@@ -737,7 +737,7 @@ public class TestAutomatonSpecification extends TestCase {
     assertTrue(spec.uselessStates());
     }
     /**
-     *Test metody uselessStates() Dodatkowy test.
+     *Test metody uselessStates() To jest dodatkowy test.
      */
 public final void testUselessStates2() {
     NaiveAutomatonSpecification spec = new NaiveAutomatonSpecification();
