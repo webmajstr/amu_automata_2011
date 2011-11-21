@@ -1,4 +1,4 @@
-﻿package pl.edu.amu.wmi.daut.base;
+package pl.edu.amu.wmi.daut.base;
 import java.util.List;
 import java.util.Arrays;
 
@@ -739,7 +739,7 @@ public class TestAutomatonSpecification extends TestCase {
     /**
      *Test metody uselessStates() To jest dodatkowy test.
      */
-public final void testUselessStates2() {
+    public final void testUselessStates2() {
     NaiveAutomatonSpecification spec = new NaiveAutomatonSpecification();
     //Test 5
     NaiveAutomatonSpecification spec2 = new NaiveAutomatonSpecification();
