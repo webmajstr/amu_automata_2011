@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.daut.base;
+﻿package pl.edu.amu.wmi.daut.base;
 import java.util.List;
 import java.util.Arrays;
 
@@ -736,6 +736,9 @@ public class TestAutomatonSpecification extends TestCase {
     spec.addTransition(q2, q1, new CharTransitionLabel('d'));
     assertTrue(spec.uselessStates());
     }
+    /**
+     *Test metody uselessStates() Dodatkowy test.
+     */
 public final void testUselessStates2() {
     NaiveAutomatonSpecification spec = new NaiveAutomatonSpecification();
     //Test 5
