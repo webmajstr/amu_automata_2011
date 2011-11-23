@@ -665,7 +665,7 @@ public abstract class AutomatonSpecification implements Cloneable  {
         mini.insert(q, this);
         return mini;
     }
-<<<<<<< HEAD
+
     public AutomatonSpecification makeOneLoopAutomaton(char c) {
         AutomatonSpecification spec = new NaiveAutomatonSpecification();
         State q0 = spec.addState();
@@ -673,8 +673,8 @@ public abstract class AutomatonSpecification implements Cloneable  {
         spec.markAsInitial(q0);
         spec.markAsFinal(q0);
         return spec;
-=======
-
+        
+        
     /**
      * Tworzy automat z jednym przejściem.
      */
@@ -683,7 +683,7 @@ public abstract class AutomatonSpecification implements Cloneable  {
         addLoop(q0, new CharTransitionLabel(c));
         markAsInitial(q0);
         markAsFinal(q0);
->>>>>>> cde43f0e6cac7a1800ffb82b5d1c1afffdf040b6
+
     }
 
     /**
