@@ -673,7 +673,7 @@ public abstract class AutomatonSpecification implements Cloneable  {
         spec.markAsInitial(q0);
         spec.markAsFinal(q0);
         return spec;
-        
+    }     
         
     /**
      * Tworzy automat z jednym przejściem.
@@ -683,7 +683,6 @@ public abstract class AutomatonSpecification implements Cloneable  {
         addLoop(q0, new CharTransitionLabel(c));
         markAsInitial(q0);
         markAsFinal(q0);
-
     }
 
     /**
