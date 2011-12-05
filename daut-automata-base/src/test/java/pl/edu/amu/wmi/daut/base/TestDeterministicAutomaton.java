@@ -219,5 +219,44 @@ public class TestDeterministicAutomaton extends TestCase {
         assertTrue(automaton9.accepts("ababbb"));
         assertEquals(4, automaton8.countStates());
     }
+
+    /**
+     * Test minimalizacji na prostym automatcie 4-stanowym ("diament").
+     */
+    public final void testMakeMinimalOnDiamond() {
+        DeterministicAutomatonSpecification spec = new NaiveDeterministicAutomatonSpecification();
+
+        State q0 = spec.addState();
+        State q1 = spec.addState();
+        State q2 = spec.addState();
+        State q3 = spec.addState();
+
+        spec.markAsInitial(q0);
+        spec.markAsFinal(q3);
+
+        spec.addTransition(q0, q1, new CharTransitionLabel('a'));
+        spec.addTransition(q0, q2, new CharTransitionLabel('b'));
+        spec.addTransition(q1, q3, new CharTransitionLabel('c'));
+        spec.addTransition(q2, q3, new CharTransitionLabel('d'));
+
+        // dla pewności sprawdzamy jeszcze pierwotny automat
+        AutomatonByRecursion originalAutomaton = new AutomatonByRecursion(spec);
+        assertTrue(originalAutomaton.accepts("ac"));
+        assertTrue(originalAutomaton.accepts("bd"));        
+        assertFalse(originalAutomaton.accepts("ad"));
+        assertFalse(originalAutomaton.accepts("bc"));        
+
+        // tu właściwy test
+        spec.makeMinimal();
+
+        AutomatonByRecursion automaton = new AutomatonByRecursion(spec);
+        assertTrue(automaton.accepts("ac"));
+        assertTrue(automaton.accepts("bd"));        
+        assertFalse(automaton.accepts("ad"));
+        assertFalse(automaton.accepts("bc"));        
+
+        assertEquals(spec.countStates(), 4);
+    }
+
 }
 
