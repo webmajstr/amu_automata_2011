@@ -221,7 +221,7 @@ public class TestDeterministicAutomaton extends TestCase {
     }
 
     /**
-     * Test minimalizacji na prostym automatcie 4-stanowym ("diament").
+     * Test minimalizacji na prostym automacie 4-stanowym ("diament").
      */
     public final void testMakeMinimalOnDiamond() {
         DeterministicAutomatonSpecification spec = new NaiveDeterministicAutomatonSpecification();
