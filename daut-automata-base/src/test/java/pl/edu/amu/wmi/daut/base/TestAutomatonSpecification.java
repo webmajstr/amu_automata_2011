@@ -792,7 +792,6 @@ public class TestAutomatonSpecification extends TestCase {
         State s1 = automat.addState();
         assertFalse(automat.isEmpty());
     }
-<<<<<<< HEAD
     /**
      *Test metody uselessStates() zwracajacej true jesli automat posiada zbedne stany.
      */
@@ -834,7 +833,7 @@ public class TestAutomatonSpecification extends TestCase {
     //Test 6
     spec2.addTransition(q1, q3, new CharTransitionLabel('c'));
     assertFalse(spec2.uselessStates());
-=======
+	}
 
     /**
      * Test wariacji metody addTransition, w której tworzyony jest nowy stan.
@@ -919,7 +918,6 @@ public class TestAutomatonSpecification extends TestCase {
         base.insert(initial, secondAutomaton);
         assertEquals(base.countTransitions(), 0);
         assertEquals(base.countStates(), automatonSize);
->>>>>>> cde43f0e6cac7a1800ffb82b5d1c1afffdf040b6
     }
 
     /**
