@@ -18,7 +18,7 @@ public class OptionalityOperator extends UnaryRegexpOperator {
         subautomaton.markAsInitial(q0);
         subautomaton.markAsFinal(q0);
         subautomaton.addTransition(q0, subautomaton.getInitialState(),
-        new EpsilonTransitionLabel());
+            new EpsilonTransitionLabel());
         return subautomaton;
     }
 }
