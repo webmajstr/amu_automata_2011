@@ -13,9 +13,8 @@ import junit.framework.TestCase;
 public class TestAnyOrderOperator extends TestCase {
 
     /**
-    * Test metody createAutomatonFromOneAutomaton
-    * z automatem z jednym stanem.
-    */
+    * Test metody createAutomatonFromTwoAutomaton
+    **/
 
     public final void testCreateAutomatonFromTwoAutomata() {
 
