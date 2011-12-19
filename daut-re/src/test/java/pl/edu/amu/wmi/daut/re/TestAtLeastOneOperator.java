@@ -47,5 +47,5 @@ public class TestAtLeastOneOperator extends TestCase {
         assertFalse(result.accepts("baaaaaaaaa"));
         assertFalse(result.accepts("cojatestujem"));
         assertFalse(result.accepts("bartlomiejburczymucha"));
-    }      
+        }
 }
