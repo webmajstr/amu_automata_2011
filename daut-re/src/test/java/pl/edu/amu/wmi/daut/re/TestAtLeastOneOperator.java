@@ -42,10 +42,10 @@ public class TestAtLeastOneOperator extends TestCase {
         assertTrue(result.accepts("abbbaaaab"));
         assertTrue(result.accepts("abababb"));
 
-        assertFalse(automaton.acceptEmptyWord() );
+        assertFalse(automaton.acceptEmptyWord());
         assertFalse(result.accepts("baba"));
         assertFalse(result.accepts("baaaaaaaaa"));
-        assertFalse(result.accepts("abba"));
+        assertFalse(result.accepts("cojatestujem"));
         assertFalse(result.accepts("bartlomiejburczymucha"));
-        }      
+    }      
 }
