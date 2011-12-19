@@ -39,8 +39,7 @@ public class TestAnyOrderOperator extends TestCase {
         automaton2.markAsFinal(q3);
 
         AnyOrderOperator operator = new AnyOrderOperator();
-        AutomatonSpecification result =
-        new NaiveAutomatonSpecification(operator.createAutomatonFromTwoAutomata(automaton1, automaton2));
+        AutomatonSpecification result = operator.createAutomatonFromTwoAutomata(automaton1, automaton2);
 
         assertTrue(result.accepts("ak"));
         assertTrue(result.accepts("ka"));
