@@ -27,7 +27,7 @@ public abstract class MinimumNumberOfOccurencesOperator extends UnaryRegexpOpera
         }
         for (State stan : inputautomat.allStates()) {
             if (inputautomat.isFinal(stan)) {
-                inputautomat.addTransition(stan, inputaut.getInitialState(), new EpsilonTransitionLabel());
+                inputautomat.addTransition(stan, inputautomat.getInitialState(), new EpsilonTransitionLabel());
             }
         }
         for (State stan : newautomat.allStates()) {
