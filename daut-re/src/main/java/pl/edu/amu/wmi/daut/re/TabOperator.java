@@ -5,23 +5,16 @@ import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import java.util.List;
 
 /**
- * Klasa reprezentująca operator '.' z wyrażeń regularnych (dowolny znak).
+ * Klasa reprezentujaca znak tabulacji.
  */
-public class AnyCharOperator extends NullaryRegexpOperator {
-    private char character;
+public class TabOperator extends NullaryRegexpOperator {
 
-    /**
-     * Metoda, ustawia pożądany znak.
-     */
-    public void setCharacter(char c) {
-        this.character = c;
-    }
     @Override
     public AutomatonSpecification createFixedAutomaton() {
-        return new NaiveAutomatonSpecification().makeOneTransitionAutomaton(character);
+        return new NaiveAutomatonSpecification().makeOneTransitionAutomaton('\t');
     }
 
-     /**
+    /**
      * Fabryka operatora.
      */
     public static class Factory extends NullaryRegexpOperatorFactory {
@@ -32,7 +25,7 @@ public class AnyCharOperator extends NullaryRegexpOperator {
         }
 
         protected RegexpOperator doCreateOperator(List<String> params) {
-            return new AnyCharOperator();
+            return new TabOperator();
         }
     }
 }
