@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.daut.re;
+﻿package pl.edu.amu.wmi.daut.re;
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.EpsilonTransitionLabel;
 import pl.edu.amu.wmi.daut.base.State;
@@ -14,11 +14,7 @@ public class OptionalityOperator extends UnaryRegexpOperator {
      */
     public AutomatonSpecification createAutomatonFromOneAutomaton(
             AutomatonSpecification subautomaton) {
-        State q0 = subautomaton.addState();
-        subautomaton.addTransition(q0, subautomaton.getInitialState(),
-            new EpsilonTransitionLabel());
-        subautomaton.markAsInitial(q0);
-        subautomaton.markAsFinal(q0);
+        subautomaton.markAsFinal(subautomaton.getInitialState());
         return subautomaton;
     }
 
@@ -29,7 +25,7 @@ public class OptionalityOperator extends UnaryRegexpOperator {
 
         @Override
         public int numberOfParams() {
-            return 0;
+            return 1;
         }
 
         protected RegexpOperator doCreateOperator(List<String> params) {
