@@ -25,7 +25,7 @@ public class OptionalityOperator extends UnaryRegexpOperator {
 
         @Override
         public int numberOfParams() {
-            return 1;
+            return 0;
         }
 
         protected RegexpOperator doCreateOperator(List<String> params) {
