@@ -48,4 +48,12 @@ public class TestAtLeastOneOperator extends TestCase {
         assertFalse(result.accepts("cojatestujem"));
         assertFalse(result.accepts("bartlomiejburczymucha"));
         }
+
+public final void testFactory() {
+
+        Factory factory = new Factory();
+        ArrayList<String> params = new ArrayList<String>();
+        assertEquals(factory.createOperator(params).getClass(),
+            new AtLeastOneOperator().getClass());
+    }
 }
