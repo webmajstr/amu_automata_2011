@@ -1,11 +1,13 @@
 package pl.edu.amu.wmi.daut.re;
 
+import java.util.ArrayList;
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import junit.framework.TestCase;
+import pl.edu.amu.wmi.daut.re.AnyStringOperator.Factory;
 
 
 /**
