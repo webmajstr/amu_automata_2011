@@ -753,7 +753,7 @@ public abstract class AutomatonSpecification implements Cloneable  {
         mini.markAsInitial(q);
         mini.insert(q, this);
         return mini;
-    }    
+    }
 
     /**
      * Tworzy automat z jednym przejściem.
