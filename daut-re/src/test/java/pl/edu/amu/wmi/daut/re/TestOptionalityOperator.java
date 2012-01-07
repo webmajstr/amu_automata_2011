@@ -1,19 +1,6 @@
 package pl.edu.amu.wmi.daut.re;
 
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
-<<<<<<< HEAD
-import junit.framework.TestCase;
-
-
-/**
- *
- * Test klasy OptionalityOperator.
- */
-public class TestOptionalityOperator extends TestCase {
-    /**
-     * Test metody createAutomatonFromOneAutomaton.
-     */
-=======
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
@@ -23,13 +10,14 @@ import java.util.ArrayList;
 import junit.framework.TestCase;
 
 /**
- * Test klasy OptionalityOperator.
- */
+*
+* Test klasy OptionalityOperator.
+*/
 public class TestOptionalityOperator extends TestCase {
 
     /**
-     * Test metody createAutomatonFromOneAutomaton.
-     */
+* Test metody createAutomatonFromOneAutomaton.
+*/
     public final void testCreateAutomatonFromOneAutomaton() {
 
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
@@ -66,8 +54,8 @@ public class TestOptionalityOperator extends TestCase {
     }
 
     /**
-     * Test fabryki.
-     */
+* Test fabryki.
+*/
     public final void testFactory() {
 
         Factory factory = new Factory();
@@ -75,5 +63,4 @@ public class TestOptionalityOperator extends TestCase {
         assertEquals(factory.createOperator(params).getClass(),
             new OptionalityOperator().getClass());
     }
->>>>>>> 518026974d5113d4b2cdb795f78d61a0a7ee4989
 }
