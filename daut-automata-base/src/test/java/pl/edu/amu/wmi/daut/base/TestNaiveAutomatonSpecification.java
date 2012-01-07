@@ -456,7 +456,7 @@ public class TestNaiveAutomatonSpecification extends TestCase {
         automat.markAsInitial(s0);
         automat.markAsFinal(s4);
 
-        assertFalse(automat.isInfinite());
+        assertTrue(automat.isInfinite());
     }
 
     /**
