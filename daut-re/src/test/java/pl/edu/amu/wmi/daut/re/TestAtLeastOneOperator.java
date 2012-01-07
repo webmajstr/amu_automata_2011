@@ -50,7 +50,9 @@ public class TestAtLeastOneOperator extends TestCase {
         assertFalse(result.accepts("cojatestujem"));
         assertFalse(result.accepts("bartlomiejburczymucha"));
         }
-
+    /**
+* Test fabryki.
+*/
 public final void testFactory() {
 
         Factory factory = new Factory();
