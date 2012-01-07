@@ -835,7 +835,7 @@ public class TestAutomatonSpecification extends TestCase {
     //Test 6
     spec2.addTransition(q1, q3, new CharTransitionLabel('c'));
     assertFalse(spec2.uselessStates());
-	}
+    }
 
     /**
      * Test wariacji metody addTransition, w której tworzyony jest nowy stan.
