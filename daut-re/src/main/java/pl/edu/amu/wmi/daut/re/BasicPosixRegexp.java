@@ -10,17 +10,20 @@ import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import pl.edu.amu.wmi.daut.base.State;
 
+/**
+ * Klasa reprezentująca podstawowe wyrażenie regularne POSIX
+ */
 public class BasicPosixRegexp implements Acceptor{
     /**
      * Konsruktor, wczytuje z klawiatury String reprezentujący wyrażenie regularne.
      */
-    public BasicPosixRegexp(String regexp) {
-        Regexp = regexp;
+    public BasicPosixRegexp(String text) {
+        regexp = text;
     }
-    public static String Regexp;
-    public static int arrowPointer = 0;
-    public static Stack<AutomatonSpecification> stackOfAutomatons;
-    public static AutomatonSpecification automaton = new NaiveAutomatonSpecification();
+    public static final String regexp;
+    public static final int arrowPointer = 0;
+    public static final Stack<AutomatonSpecification> stackOfAutomatons;
+    public static final AutomatonSpecification automaton = new NaiveAutomatonSpecification();
     /**
      * Właściwa metoda, zwracająca automat akceptujący wszystkie łańcuchy
      * generowane przez wyrażenie regularne.
@@ -173,14 +176,14 @@ public class BasicPosixRegexp implements Acceptor{
             }
             while (tmp.size() >= 1) {
                 if (tmp.size() == 1 && automataStack.size() == 0) {
-                    AutomatonSpecification Automaton = tmp.pop();
-                    automataStack.push(Automaton);
+                    AutomatonSpecification automaton = tmp.pop();
+                    automataStack.push(automaton);
                     end = true;
                     break;
                 } 
                 if (tmp.size() == 1 && automataStack.size() != 0) {
-                    AutomatonSpecification Automaton = tmp.pop();
-                    automataStack.push(Automaton);
+                    AutomatonSpecification automata = tmp.pop();
+                    automataStack.push(automata);
                     break;
                 } else {
                     automataStack.push(new ConcatenationOperator().
