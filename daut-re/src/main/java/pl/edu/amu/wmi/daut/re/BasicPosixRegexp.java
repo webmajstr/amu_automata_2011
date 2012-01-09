@@ -20,9 +20,9 @@ public class BasicPosixRegexp implements Acceptor{
     public BasicPosixRegexp(String text) {
         regexp = text;
     }
-    public static final String regexp;
+    public static String regexp;
     public static int arrowPointer = 0;
-    public static final Stack<AutomatonSpecification> stackOfAutomatons;
+    public static Stack<AutomatonSpecification> stackOfAutomatons;
     public static final AutomatonSpecification automaton = new NaiveAutomatonSpecification();
     /**
      * Właściwa metoda, zwracająca automat akceptujący wszystkie łańcuchy
@@ -30,7 +30,7 @@ public class BasicPosixRegexp implements Acceptor{
      */
     private AutomatonSpecification makeAutomatonAcceptsRegexp() {
         stackOfAutomatons = new Stack<AutomatonSpecification>();
-        while (arrowPointer < Regexp.length()) {
+        while (arrowPointer < regexp.length()) {
             if (commonChar(regexp)) {
                 continue;
             }
