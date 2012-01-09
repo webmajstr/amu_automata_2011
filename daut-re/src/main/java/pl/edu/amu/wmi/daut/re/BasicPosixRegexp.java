@@ -21,7 +21,7 @@ public class BasicPosixRegexp implements Acceptor{
         regexp = text;
     }
     public static final String regexp;
-    public static final int arrowPointer = 0;
+    public static int arrowPointer = 0;
     public static final Stack<AutomatonSpecification> stackOfAutomatons;
     public static final AutomatonSpecification automaton = new NaiveAutomatonSpecification();
     /**
@@ -31,19 +31,19 @@ public class BasicPosixRegexp implements Acceptor{
     private AutomatonSpecification makeAutomatonAcceptsRegexp() {
         stackOfAutomatons = new Stack<AutomatonSpecification>();
         while (arrowPointer < Regexp.length()) {
-            if (commonChar(Regexp)) {
+            if (commonChar(regexp)) {
                 continue;
             }
-            if (findKleeneStar(Regexp)) {
+            if (findKleeneStar(regexp)) {
                 continue;
             }
-            if (findFirstCharClass(Regexp)) {
+            if (findFirstCharClass(regexp)) {
                 continue;
             }
-            if (findSecondCharClass(Regexp)) {
+            if (findSecondCharClass(regexp)) {
                 continue;
             }
-            if (findAnyChar(Regexp)) {
+            if (findAnyChar(regexp)) {
                 continue;
             }
         }
