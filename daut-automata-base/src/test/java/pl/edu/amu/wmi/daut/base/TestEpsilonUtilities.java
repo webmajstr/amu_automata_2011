@@ -7,8 +7,8 @@ import junit.framework.TestCase;
 *    Test klasy EpsilonUtilities.
 */
 public class TestEpsilonUtilities extends TestCase {
-    
-    /*
+
+    /**
      *  Automat bez epsilon przejsc.
      */
     public final void testEpsilonUtilitiesNoEpsilon() {
@@ -24,9 +24,9 @@ public class TestEpsilonUtilities extends TestCase {
         test.addTransition(trzeci, koniec, new EmptyTransitionLabel());
         assertFalse(EpsilonUtilities.isEpsilonTransition(test));
     }
-    
-    /*
-     * Automat z epsilon przejsciem. 
+
+    /**
+     * Automat z epsilon przejsciem.
      */
     public final void testEpsilonUtilitiesSimpleAutomatonWithEpsilon() {
         AutomatonSpecification test2 = new NaiveAutomatonSpecification();
@@ -40,7 +40,7 @@ public class TestEpsilonUtilities extends TestCase {
         assertTrue(EpsilonUtilities.isEpsilonTransition(test2));
     }
 
-   /*
+   /**
     *  Pusty automat.
     */
     public final void testEpsilonUtilitiesEmptyAutomaton() {
@@ -48,7 +48,7 @@ public class TestEpsilonUtilities extends TestCase {
         assertFalse(EpsilonUtilities.isEpsilonTransition(test4));
     }
 
-    /*
+    /**
      * Automat z pustym przejsciem.
      */
     public final void testEpsiloUtilitiesWithEmptyTransition() {
@@ -61,10 +61,10 @@ public class TestEpsilonUtilities extends TestCase {
         assertFalse(EpsilonUtilities.isEpsilonTransition(test3));
     }
 
-    /*
+    /**
      * Automat z dwoma epsilonami.
      */
-    public final void EpsilonUtilitiesSimpleAutomatonWithTwoEpsilons() {
+    public final void testEpsilonUtilitiesSimpleAutomatonWithTwoEpsilons() {
         AutomatonSpecification test5 = new NaiveAutomatonSpecification();
         State pierwszy5 = test5.addState();
         State drugi5 = test5.addState();
