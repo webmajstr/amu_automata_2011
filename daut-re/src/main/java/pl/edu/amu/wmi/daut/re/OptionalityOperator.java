@@ -12,7 +12,10 @@ public class OptionalityOperator extends UnaryRegexpOperator {
      */
     public AutomatonSpecification createAutomatonFromOneAutomaton(
             AutomatonSpecification subautomaton) {
-        subautomaton.markAsFinal(subautomaton.getInitialState());
+        State q = subautomaton.addState();
+        subautomaton.addTransition(q, subautomaton.getInitialState(),new EpsilonTransitionLabel());
+        subautomaton.markAsInitial(q);
+        subautomaton.markAsFinal(q);
         return subautomaton;
     }
 
