@@ -4,6 +4,7 @@ import pl.edu.amu.wmi.daut.base.EpsilonTransitionLabel;
 import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
+
 /**
  * Klasa reprezentujaca operator ?
  */
