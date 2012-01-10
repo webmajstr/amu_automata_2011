@@ -11,12 +11,13 @@ import java.util.List;
 public class OptionalityOperator extends UnaryRegexpOperator {
 
     /**
-     * Główna metoda klasy.
+     * Glowna metoda klasy.
      */
     public AutomatonSpecification createAutomatonFromOneAutomaton(
             AutomatonSpecification subautomaton) {
         State q = subautomaton.addState();
-        subautomaton.addTransition(q, subautomaton.getInitialState(),new EpsilonTransitionLabel());
+        subautomaton.addTransition(q, subautomaton.getInitialState(),
+            new EpsilonTransitionLabel());
         subautomaton.markAsInitial(q);
         subautomaton.markAsFinal(q);
         return subautomaton;
