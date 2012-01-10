@@ -1,5 +1,7 @@
 package pl.edu.amu.wmi.daut.re;
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
+import pl.edu.amu.wmi.daut.base.EpsilonTransitionLabel;
+import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
 /**
@@ -19,9 +21,9 @@ public class OptionalityOperator extends UnaryRegexpOperator {
         return subautomaton;
     }
 
-     /**
-      * Fabryka operatora.
-      */
+    /**
+     * Fabryka operatora.
+     */
     public static class Factory extends UnaryRegexpOperatorFactory {
 
         @Override
