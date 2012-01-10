@@ -145,7 +145,7 @@ public class TestDeterministicAutomaton extends TestCase {
     /**
      * test2 metody minimalizujacej automat.
      */
-    public final void testMakeMinimal2(){
+    public final void testMakeMinimal2() {
         DeterministicAutomatonSpecification automaton1 =
                 new NaiveDeterministicAutomatonSpecification();
         DeterministicAutomatonSpecification automaton2 =
@@ -187,7 +187,7 @@ public class TestDeterministicAutomaton extends TestCase {
     /**
      * test3 metody minimalizujacej automat.
      */
-    public final void testMakeMinimal3(){
+    public final void testMakeMinimal3() {
         DeterministicAutomatonSpecification automaton1 =
                 new NaiveDeterministicAutomatonSpecification();
         DeterministicAutomatonSpecification automaton2 =
