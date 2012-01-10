@@ -7,11 +7,11 @@ import junit.framework.TestCase;
 *    Test klasy EpsilonUtilities.
 */
 public class TestEpsilonUtilities extends TestCase {
-
+    
+    /*
+     *  Automat bez epsilon przejsc.
+     */
     public final void testEpsilonUtilitiesNoEpsilon() {
-        /*
-        *  Automat bez epsilon przejsc.
-        */
         AutomatonSpecification test = new NaiveAutomatonSpecification();
         State koniec = test.addState();
         State pierwszy = test.addState();
@@ -24,11 +24,11 @@ public class TestEpsilonUtilities extends TestCase {
         test.addTransition(trzeci, koniec, new EmptyTransitionLabel());
         assertFalse(EpsilonUtilities.isEpsilonTransition(test));
     }
-
+    
+    /*
+     * Automat z epsilon przejsciem. 
+     */
     public final void testEpsilonUtilitiesSimpleAutomatonWithEpsilon() {
-        /*
-        * Automat z epsilon przejsciem.
-        */
         AutomatonSpecification test2 = new NaiveAutomatonSpecification();
         State koniec2 = test2.addState();
         State pierwszy2 = test2.addState();
@@ -40,14 +40,17 @@ public class TestEpsilonUtilities extends TestCase {
         assertTrue(EpsilonUtilities.isEpsilonTransition(test2));
     }
 
+   /*
+    *  Pusty automat.
+    */
     public final void testEpsilonUtilitiesEmptyAutomaton() {
-        /*
-        *  Pusty automat.
-        */
         AutomatonSpecification test4 = new NaiveAutomatonSpecification();
         assertFalse(EpsilonUtilities.isEpsilonTransition(test4));
     }
 
+    /*
+     * Automat z pustym przejsciem.
+     */
     public final void testEpsiloUtilitiesWithEmptyTransition() {
         AutomatonSpecification test3 = new NaiveAutomatonSpecification();
         State pierwszy3 = test3.addState();
@@ -58,6 +61,9 @@ public class TestEpsilonUtilities extends TestCase {
         assertFalse(EpsilonUtilities.isEpsilonTransition(test3));
     }
 
+    /*
+     * Automat z dwoma epsilonami.
+     */
     public final void EpsilonUtilitiesSimpleAutomatonWithTwoEpsilons() {
         AutomatonSpecification test5 = new NaiveAutomatonSpecification();
         State pierwszy5 = test5.addState();
