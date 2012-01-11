@@ -11,8 +11,8 @@ public class CharClassOperator extends NullaryRegexpOperator {
     /**
     * Konstruktor, pobiera porzadana klase znakow.
     **/
-    public CharClassOperator(String Class) {
-        charClass = Class;
+    public CharClassOperator(String c) {
+        this.charClass = c;
     }
     @Override
     public AutomatonSpecification createFixedAutomaton() {
