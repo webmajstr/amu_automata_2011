@@ -1,29 +1,28 @@
-
 package pl.edu.amu.wmi.daut.base;
 
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-/*
-* Klasa służy obsłudze prostych klas wyrażeń regularnych,
-* pozwala na sprawdzenie czy dany znak je spełnia.
-*/
+/**
+ * Klasa służy obsłudze prostych klas wyrażeń regularnych,
+ * pozwala na sprawdzenie czy dany znak je spełnia.
+ */
 public class CharClassTransitionLabel extends TransitionLabel {
 
     private SortedSet<Character> ssc = new TreeSet<Character>();
     private String charClass;
 
     /**
-* poniższy konstruktor przekształca dany łańcuch na zbiór charów.
-* @param s jest zbiorem klas wyrażeń regularnych do których należy dany char
-*/
+     * poniższy konstruktor przekształca dany łańcuch na zbiór charów.
+     * @param s jest zbiorem klas wyrażeń regularnych do których należy dany char
+     */
     public CharClassTransitionLabel(String s) {
         charClass = s;
+        if (s.charAt(0) == '-' || s.charAt(s.length() - 1) == '-') {
+            addChar(s.charAt(0));
+        }
         for (int i = 0; i < s.length(); ++i) {
-            if (s.charAt(i) == '-') {
-                addChar(s.charAt(i - 1), s.charAt(i + 1));
-                i++;
-            } else if (i + 1 < s.length() && s.charAt(i + 1) == '-') {
+            if (i + 2 < s.length() && s.charAt(i + 1) == '-') {
                 addChar(s.charAt(i), s.charAt(i + 2));
                 i += 2;
             } else {
