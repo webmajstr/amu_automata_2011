@@ -31,8 +31,15 @@ public class RangeNumberOfOccurrencesOperator extends UnaryRegexpOperator {
  
         AutomatonSpecification finalAutomaton = subautomaton.clone();
 
-        if (this.min == 0)
+        if (this.min == 0) {
             finalAutomaton.markAsFinal(finalAutomaton.getInitialState());
+            if (this.max == 0) {
+                for (State state : finalAutomaton.allStates()) {
+                    finalAutomaton.unmarkAsFinalState(state);
+                }
+                finalAutomaton.markAsFinal(finalAutomaton.getInitialState());
+            }
+        }
 
         for (int i = 1; i < this.max; i++) {
             State newState = finalAutomaton.addState();
