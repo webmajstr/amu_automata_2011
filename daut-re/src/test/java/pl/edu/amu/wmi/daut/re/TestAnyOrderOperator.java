@@ -46,21 +46,21 @@ public class TestAnyOrderOperator extends TestCase {
         AutomatonSpecifitacion automaton3 = new NaiveAutomatonSpecification();
         State q4 = automaton3.addState();
         State q5 = automaton3.addState();
-        automaton3.addTransition(q4, q5, new CharTransitionLabel(' '));
+        automaton3.addTransition(q4, q5, new CharTransitionLabel(''));
         automaton3.markAsInitial(q4);
         automaton3.markAsFinal(q5);
 
         AutomatonSpecification automaton4 = new NaiveAutomatonSpecification();
         State q6 = automaton2.addState();
         State q7 = automaton2.addState();
-        automaton2.addTransition(q6, q7, new CharTransitionLabel(' '));
+        automaton2.addTransition(q6, q7, new CharTransitionLabel(''));
         automaton2.markAsInitial(q6);
         automaton2.markAsFinal(q7);        
 
         AnyOrderOperator operator1 = new AnyOrderOperator();
         AutomatonSpecification result1 = operator1.createAutomatonFromTwoAutomata(automaton3, automaton4);
         
-        assertTrue(result1.accepts(" "));   
+        assertTrue(result1.accepts(""));   
     }
     /**
      * Test fabryki
