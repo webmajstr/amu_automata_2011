@@ -30,7 +30,6 @@ public class CompareExtendedPosixRegexpWithJavaRegexp {
                 throw new RuntimeException();
             }
         }
-
         return;
     }
 }
