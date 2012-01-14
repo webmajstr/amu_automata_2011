@@ -50,6 +50,7 @@ public class TestAnyOrderOperator extends TestCase {
         assertTrue(result.accepts("ka"));
         assertFalse(result.accepts("a"));
         assertFalse(result.accepts("k"));
+        assertFalse(result.accepts(""));
 
         AutomatonSpecifitacion automaton3 = new NaiveAutomatonSpecification();
         State q4 = automaton3.addState();
