@@ -2,9 +2,16 @@ package pl.edu.amu.wmi.daut.re;
 
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
+import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
+import pl.edu.amu.wmi.daut.base.EpsilonTransitionLabel;
+import pl.edu.amu.wmi.daut.re.AnyOrderOperator.Factory;
+
 import junit.framework.TestCase;
+import java.util.ArrayList;
+
+
 /**
  * Test klasy AnyOrderOperator
  */
