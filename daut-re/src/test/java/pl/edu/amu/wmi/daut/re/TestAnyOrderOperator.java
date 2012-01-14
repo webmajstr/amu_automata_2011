@@ -5,19 +5,16 @@ import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import junit.framework.TestCase;
-
 /**
  * Test klasy AnyOrderOperator
  */
-public class TestAnyOrderOperator extends TestCase {
-	
+public class TestAnyOrderOperator extends TestCase {	
 	/**
      * Test konstruktora AnyOrderOperator
      */
 	public void testAnyOrderOperator() {
         AnyOrderOperator operator = new AnyOrderOperator();
     }
-	
 	/**
      * Test metody createAutomatonFromTwoAutomaton
      */
@@ -65,7 +62,6 @@ public class TestAnyOrderOperator extends TestCase {
         
         assertTrue(result1.accepts(""));   
     }
-
     /**
      * Test fabryki
      */
