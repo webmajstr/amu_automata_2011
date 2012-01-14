@@ -11,7 +11,6 @@ import pl.edu.amu.wmi.daut.re.AnyOrderOperator.Factory;
 import junit.framework.TestCase;
 import java.util.ArrayList;
 
-
 /**
  * Test klasy AnyOrderOperator
  */
