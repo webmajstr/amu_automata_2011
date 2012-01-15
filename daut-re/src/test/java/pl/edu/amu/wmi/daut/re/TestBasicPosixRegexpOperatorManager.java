@@ -17,6 +17,7 @@ public class TestBasicPosixRegexpOperatorManager extends TestCase {
      * Test metody GetFactory.
      */
     public final void testGetFactory() {
+
         managerR = new RegexpOperatorManager();
         BasicPosixRegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
 
