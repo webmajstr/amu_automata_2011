@@ -70,7 +70,7 @@ public class TestAnyOrderOperator extends TestCase {
         		new NondeterministicAutomatonByThompsonApproach(
                 operator1.createAutomatonFromTwoAutomata(automaton3, automaton4));
 
-        assertTrue(result1.accepts("epsilon"));
+        assertTrue(result1.accepts(""));
     }
     /**
      * Test fabryki
