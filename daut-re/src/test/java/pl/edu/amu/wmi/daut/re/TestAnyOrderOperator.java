@@ -70,8 +70,11 @@ public class TestAnyOrderOperator extends TestCase {
                 new NondeterministicAutomatonByThompsonApproach(
                 operator1.createAutomatonFromTwoAutomata(automaton3, automaton4));
 
+        OutgoingTransition ot = result1.allOutgoingTransitions(q6);
+        String tl = (ot.getTransitionLabel()).toString();
+
         assertFalse(result1.accepts(""));
-        assertTrue(result1.accepts("epsilon"));
+        assertTrue(result1.accepts(tl)));
     }
     /**
      * Test fabryki.
