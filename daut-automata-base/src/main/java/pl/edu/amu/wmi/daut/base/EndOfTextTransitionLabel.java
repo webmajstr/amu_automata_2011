@@ -13,9 +13,11 @@ public class EndOfTextTransitionLabel extends ZeroLengthConditionalTransitionLab
     protected boolean doCheckContext(String s, int position) {
         if ((position < 0) || (position > s.length())) {
             throw new PositionOutOfStringBordersException();
-        } else if (position == s.length()) {
+        }
+        if (position == s.length()) {
             return true;
-        } else return false;
+        }
+        return false;
     }
 
     @Override
