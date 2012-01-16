@@ -74,7 +74,7 @@ public class TestAnyOrderOperator extends TestCase {
         String tl = (ot.getTransitionLabel()).toString();
 
         assertFalse(result1.accepts(""));
-        assertTrue(result1.accepts(tl)));
+        assertTrue(result1.accepts(tl));
     }
     /**
      * Test fabryki.
