@@ -18,7 +18,7 @@ public class TestAnyOrderOperator extends TestCase {
     /**
      * Test konstruktora AnyOrderOperator.
      */
-	public void testAnyOrderOperator() {
+    public void testAnyOrderOperator() {
         AnyOrderOperator operator = new AnyOrderOperator();
     }
     /**
@@ -70,7 +70,7 @@ public class TestAnyOrderOperator extends TestCase {
         		new NondeterministicAutomatonByThompsonApproach(
                 operator1.createAutomatonFromTwoAutomata(automaton3, automaton4));
 
-        assertTrue(result1.accepts(""));
+        assertTrue((result1.accepts()).toString()=="epsilon");
     }
     /**
      * Test fabryki.
