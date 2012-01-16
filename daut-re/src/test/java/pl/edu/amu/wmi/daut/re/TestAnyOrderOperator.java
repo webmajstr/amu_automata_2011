@@ -43,7 +43,7 @@ public class TestAnyOrderOperator extends TestCase {
         AnyOrderOperator operator = new AnyOrderOperator();
         NondeterministicAutomatonByThompsonApproach result =
                 new NondeterministicAutomatonByThompsonApproach(
-        		operator.createAutomatonFromTwoAutomata(automaton1, automaton2));
+                operator.createAutomatonFromTwoAutomata(automaton1, automaton2));
 
         assertTrue(result.accepts("ak"));
         assertTrue(result.accepts("ka"));
@@ -67,7 +67,7 @@ public class TestAnyOrderOperator extends TestCase {
 
         AnyOrderOperator operator1 = new AnyOrderOperator();
         NondeterministicAutomatonByThompsonApproach result1 =
-        		new NondeterministicAutomatonByThompsonApproach(
+                new NondeterministicAutomatonByThompsonApproach(
                 operator1.createAutomatonFromTwoAutomata(automaton3, automaton4));
 
         assertFalse(result1.accepts(""));
