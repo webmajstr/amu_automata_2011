@@ -12,17 +12,17 @@ import junit.framework.TestCase;
 import java.util.ArrayList;
 
 /**
- * Test klasy AnyOrderOperator
+ * Test klasy AnyOrderOperator.
  */
 public class TestAnyOrderOperator extends TestCase {
     /**
-     * Test konstruktora AnyOrderOperator
+     * Test konstruktora AnyOrderOperator.
      */
 	public void testAnyOrderOperator() {
         AnyOrderOperator operator = new AnyOrderOperator();
     }
     /**
-     * Test metody createAutomatonFromTwoAutomaton
+     * Test metody createAutomatonFromTwoAutomaton.
      */
     public final void testCreateAutomatonFromTwoAutomata() {
 
@@ -73,7 +73,7 @@ public class TestAnyOrderOperator extends TestCase {
         assertTrue(result1.accepts(""));
     }
     /**
-     * Test fabryki
+     * Test fabryki.
      */
     public final void testFactory() {
         Factory factory = new Factory();
