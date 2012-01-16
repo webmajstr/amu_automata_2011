@@ -11,15 +11,12 @@ import junit.framework.TestCase;
  */
 public class TestBasicPosixRegexpOperatorManager extends TestCase {
 
-    private RegexpOperatorManager managerR;
-
     /**
      * Test metody GetFactory.
      */
     public final void testGetFactory() {
 
-        managerR = new RegexpOperatorManager();
-        BasicPosixRegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
+        RegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
 
         assertNotNull(manager);
         assertNull(manager.getFactory("^"));
@@ -35,8 +32,7 @@ public class TestBasicPosixRegexpOperatorManager extends TestCase {
      */
     public final void testAddOperatorWithPiority() {
 
-        managerR = new RegexpOperatorManager();
-        BasicPosixRegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
+        RegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
 
         assertEquals(3, manager.getPriority("*"));
         assertEquals(4, manager.getPriority("."));
@@ -50,8 +46,7 @@ public class TestBasicPosixRegexpOperatorManager extends TestCase {
      */
     public final void testGetSeparators() {
 
-        managerR = new RegexpOperatorManager();
-        BasicPosixRegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
+        RegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
 
         List<String> kleene = new ArrayList<String>();
         kleene.add("");
@@ -86,8 +81,7 @@ public class TestBasicPosixRegexpOperatorManager extends TestCase {
      */
     public final void testGetOperatorsForStringPrefix() {
 
-        managerR = new RegexpOperatorManager();
-        BasicPosixRegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
+        RegexpOperatorManager manager = new BasicPosixRegexpOperatorManager();
 
         List<String> string = new ArrayList<String>();
 
