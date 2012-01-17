@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 public class TestToString extends TestCase {
 
     /**
-     * Test sprawdzający AlternativeOperator, SingleCharacterOperator i 
+     * Test sprawdzający AlternativeOperator, SingleCharacterOperator i
      * BellCharacterOperator.
      */
     public final void testToString1() throws Exception {
@@ -70,7 +70,7 @@ public class TestToString extends TestCase {
         List<RegexpOperatorTree> subtrees2 = new ArrayList<RegexpOperatorTree>();
         RegexpOperator s1 = new NewLineOperator();
         RegexpOperator s2 = new FixedNumberOfOccurrencesOperator(5);
-        RegexpOperator s3 = new NumericalRangeOperator(4,7);
+        RegexpOperator s3 = new NumericalRangeOperator(4, 7);
         RegexpOperator root = new AlternativeOperator();
         RegexpOperatorTree tree0 = new RegexpOperatorTree(s1, subtrees);
         subtrees.add(tree0);
@@ -96,7 +96,7 @@ public class TestToString extends TestCase {
         RegexpOperator s1 = new KleeneStarOperator();
         RegexpOperator s2 = new OptionalityOperator();
         RegexpOperator s3 = new WhitespaceOperator();
-        RegexpOperator s4 = new RangeNumberOfOccurrencesOperator(4,7);
+        RegexpOperator s4 = new RangeNumberOfOccurrencesOperator(4, 7);
         RegexpOperator s5 = new TabOperator();
         RegexpOperatorTree tree4 = new RegexpOperatorTree(s5, subtrees2);
         subtrees2.add(tree4);

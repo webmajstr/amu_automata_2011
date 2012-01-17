@@ -36,6 +36,10 @@ public class WordBoundaryTransitionLabel extends ZeroLengthConditionalTransition
         }
         return false;
     };
+
+    /*
+     * Metoda ta sprawdza czy char a jest z zakresu [a-zA-Z0-9_].
+     */
     public boolean isCharacter(char a) {
         if (a >= 48 && a <= 57 || a >= 65 && a <= 90 || a >= 97 && a <= 122 || a == 95)
             return true;
