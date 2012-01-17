@@ -20,8 +20,8 @@ public class RangeNumberOfOccurrencesOperator extends UnaryRegexpOperator {
     * Konstruktor klasy.
     */
     public RangeNumberOfOccurrencesOperator(int n, int m) {
-            this.max = m;
-            this.min = n;
+        this.max = m;
+        this.min = n;
     }
 
    /**
