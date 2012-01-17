@@ -21,6 +21,10 @@ public class TestWordBoundaryTransitionLabel extends TestCase {
 
         assertFalse(trans.doCheckContext("gorczyca", 4));
         assertFalse(trans.doCheckContext("baobab", 3));
+        assertFalse(trans.doCheckContext("jakis string ", 13));
+        assertFalse(trans.doCheckContext(" jeden", 0));
+        assertFalse(trans.doCheckContext("jeden", 0));
+        assertFalse(trans.doCheckContext("jakis string", 6));
 
         try {
             trans.doCheckContext("gorczyca", 10);
