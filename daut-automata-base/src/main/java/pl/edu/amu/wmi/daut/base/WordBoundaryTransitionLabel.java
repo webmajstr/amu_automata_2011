@@ -7,6 +7,14 @@ package pl.edu.amu.wmi.daut.base;
  */
 public class WordBoundaryTransitionLabel extends ZeroLengthConditionalTransitionLabel {
 
+    /*
+     * Metoda ta sprawdza czy char a jest z zakresu [a-zA-Z0-9_].
+     */
+    public boolean isCharacter(char a) {
+        if (a >= 'a' && a <= 'z' || a >= 'A' && a <= 'Z' || a >= '0' && a <= '9' || a == '_')
+            return true;
+        return false;
+    }
     @Override
     public boolean doCheckContext(String s, int position) {
         char a;
@@ -36,15 +44,6 @@ public class WordBoundaryTransitionLabel extends ZeroLengthConditionalTransition
         }
         return false;
     };
-
-    /*
-     * Metoda ta sprawdza czy char a jest z zakresu [a-zA-Z0-9_].
-     */
-    public boolean isCharacter(char a) {
-        if (a >= 'a' && a <= 'z' || a >= 'A' && a <= 'Z' || a >= '0' && a <= '9' || a == '_')
-            return true;
-        return false;
-    }
     @Override
     public boolean canAcceptCharacter(char c) {
         return false;
