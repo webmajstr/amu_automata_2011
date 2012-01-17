@@ -1,13 +1,6 @@
 package pl.edu.amu.wmi.daut.base;
 
 /**
- * Wyjątek który rzuca klasa BeginingOfTextOrLineTransitionLabel 
- */
-class PositionOutOfStringBordersException extends RuntimeException {
-    private static final long serialVersionUID = 1L;
-}
-
-/**
  * Klasa BeginingOfTextOrLineTransitionLabel, która odpowiada operatorowi "^" z
  * z wyrażeń regularnych standardu POSIX.
  */
