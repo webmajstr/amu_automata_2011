@@ -9,39 +9,38 @@ public class WordBoundaryTransitionLabel extends ZeroLengthConditionalTransition
 
     @Override
     public boolean doCheckContext(String s, int position) {
-        String str;
-        boolean character, leftCharacter;
+        char a;
         if (s.length() < position || position < 0)
              throw new PositionOutOfStringBordersException();
         if (position == s.length()) {
-            str = String.valueOf(s.charAt(position - 1));
-            character = str.matches("\\w");
-            if (character)
+            a = s.charAt(position - 1);
+            if (isCharacter(a))
                 return true;
             return false;
         }
         if (position == 0) {
-            str = String.valueOf(s.charAt(position));
-            character = str.matches("\\w");
-            if (character)
+            a = s.charAt(position);
+            if (isCharacter(a))
                 return true;
             return false;
         }
-        str = String.valueOf(s.charAt(position));
-        character = str.matches("\\w");
-        if (character) {
-            str = String.valueOf(s.charAt(position - 1));
-            leftCharacter = str.matches("\\W");
-            if (leftCharacter)
+        a = s.charAt(position);
+        if (isCharacter(a)) {
+            a = s.charAt(position - 1);
+            if (!isCharacter(a))
                 return true;
         } else {
-            str = String.valueOf(s.charAt(position - 1));
-            leftCharacter = str.matches("\\w");
-            if (leftCharacter)
+            a = s.charAt(position - 1);
+            if (isCharacter(a))
                 return true;
         }
         return false;
     };
+    public boolean isCharacter(char a) {
+        if (a >= 48 && a <= 57 || a >= 65 && a <= 90 || a >= 97 && a <= 122 || a == 95)
+            return true;
+        return false;
+    }
     @Override
     public boolean canAcceptCharacter(char c) {
         return false;

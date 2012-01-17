@@ -17,7 +17,7 @@ public class TestToString extends TestCase {
         List<RegexpOperatorTree> subtrees = new ArrayList<RegexpOperatorTree>();
         RegexpOperator root = new AlternativeOperator();
         RegexpOperator s1 = new SingleCharacterOperator('a');
-        RegexpOperator s2 = new SingleCharacterOperator('b');
+        RegexpOperator s2 = new BellCharacterOperator();
         RegexpOperatorTree tree0 = new RegexpOperatorTree(s1, subtrees);
         RegexpOperatorTree tree1 = new RegexpOperatorTree(s2, subtrees);
         subtrees.add(tree0);
