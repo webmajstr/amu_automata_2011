@@ -23,7 +23,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
             assertTrue(true);
         }
     }
-    
+
     /**
      * Test klasy znaków alnum.
      */
