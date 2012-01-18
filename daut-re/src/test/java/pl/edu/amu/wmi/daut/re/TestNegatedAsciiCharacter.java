@@ -230,6 +230,9 @@ public class TestNegatedAsciiCharacter extends TestCase {
         assertFalse(automaton.accepts("a"));
     }
 
+    /**
+     * Test metody toString.
+     */
     public void testToString() {
         NegatedAsciiCharacterClass negatedClass = new NegatedAsciiCharacterClass("alnum");
         assertTrue(negatedClass.toString() == "^ASCII");
