@@ -1,11 +1,13 @@
 package pl.edu.amu.wmi.daut.re;
 
+import java.util.ArrayList;
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import junit.framework.TestCase;
+import pl.edu.amu.wmi.daut.re.AtLeastOneOperator.Factory;
 
 
 /**
@@ -48,7 +50,9 @@ public class TestAtLeastOneOperator extends TestCase {
         assertFalse(result.accepts("cojatestujem"));
         assertFalse(result.accepts("bartlomiejburczymucha"));
         }
-
+    /**
+* Test fabryki.
+*/
 public final void testFactory() {
 
         Factory factory = new Factory();
