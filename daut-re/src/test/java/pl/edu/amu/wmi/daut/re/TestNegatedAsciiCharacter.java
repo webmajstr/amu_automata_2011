@@ -30,7 +30,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testAlnumNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("alnum");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -46,7 +46,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testAlphaNegatedAsciiCHaracter() {
        ArrayList<String> params = new ArrayList<String>();
         params.add("alpha");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -60,7 +60,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testBlankNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("blank");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -72,8 +72,8 @@ public class TestNegatedAsciiCharacter extends TestCase {
      */
     public void testCntrlNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
-        params.add("Cntrl");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        params.add("cntrl");
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -87,7 +87,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testDigitNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("digit");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -104,7 +104,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testGraphNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("graph");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -119,7 +119,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testLowerNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("lower");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -134,7 +134,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testPrintNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("print");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -153,8 +153,8 @@ public class TestNegatedAsciiCharacter extends TestCase {
      */
     public void testPunctNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
-        params.add("punck");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        params.add("punct");
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -170,7 +170,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testSpaceNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("space");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -186,7 +186,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testUpperNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("upper");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -202,7 +202,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testWordNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("word");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
@@ -218,7 +218,7 @@ public class TestNegatedAsciiCharacter extends TestCase {
     public void testXdigitNegatedAsciiCHaracter() {
         ArrayList<String> params = new ArrayList<String>();
         params.add("xdigit");
-        RegexpOperator spec = (new AsciiCharacterClassOperator.Factory()).createOperator(params);
+        RegexpOperator spec = (new NegatedAsciiCharacterClass.Factory()).createOperator(params);
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
