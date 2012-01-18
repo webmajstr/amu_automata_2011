@@ -30,14 +30,14 @@ public class TestRandomStringGenerator extends TestCase {
         String alphabet = "ABCDEFGHIJ";
         RandomStringGenerator generator = new RandomStringGenerator(alphabet);
         List<String>  randomWords = generateRandomWords(generator, N);
-        for (int i = 0; i<alphabet.length(); i++) {
+        for (int i = 0; i < alphabet.length(); i++) {
             assertTrue(listContains(randomWords, alphabet.charAt(i)));
         }
     }
 
     private List<String>  generateRandomWords(RandomStringGenerator generator, int n) {
         List<String>  result = new ArrayList<String>(n);
-        for (int i = 0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             result.add(generator.getRandomString());
         }
         return result;
