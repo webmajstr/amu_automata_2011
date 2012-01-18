@@ -14,7 +14,7 @@ public class TestRandomStringGenerator extends TestCase {
 
     /**
      * Metoda testująca RandomStringGenerator.
-     * Puste s�owo.
+     * Puste słowo.
      */
     public void testIsEmptyWordPresent() {
         RandomStringGenerator generator = new RandomStringGenerator("ABCD");
@@ -24,7 +24,7 @@ public class TestRandomStringGenerator extends TestCase {
     
     /**
      * Metoda testująca RandomStringGenerator.
-     * Niepuste s�owo.
+     * Niepuste słowo.
      */
     public void testAreAllCharacterPresent() {
         String alphabet = "ABCDEFGHIJ";
