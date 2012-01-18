@@ -10,7 +10,7 @@ import junit.framework.TestCase;
  */
 public class TestRandomStringGenerator extends TestCase {
 
-    private final static int N = 1000;
+    private static final int N = 1000;
 
     /**
      * Metoda testująca RandomStringGenerator.
