@@ -229,4 +229,9 @@ public class TestNegatedAsciiCharacter extends TestCase {
         assertFalse(automaton.accepts("F"));
         assertFalse(automaton.accepts("a"));
     }
+
+    public void testToString() {
+        NegatedAsciiCharacterClass negatedClass = new NegatedAsciiCharacterClass("alnum");
+        assertTrue(negatedClass.toString() == "^ASCII");
+    }
 }
