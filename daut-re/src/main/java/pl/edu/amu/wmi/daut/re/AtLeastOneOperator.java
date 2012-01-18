@@ -7,9 +7,9 @@ import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.State;
 
 /**
-* Klasa reprezentująca operator '+' z wyrażeń regularnych
-* (przynajmniej jedno wystąpienie).
-*/
+ * Klasa reprezentująca operator '+' z wyrażeń regularnych
+ * (przynajmniej jedno wystąpienie).
+ */
 public class AtLeastOneOperator extends UnaryRegexpOperator {
 
     @Override
@@ -29,8 +29,8 @@ public class AtLeastOneOperator extends UnaryRegexpOperator {
     }
 
      /**
-* Fabryka operatora.
-*/
+      * Fabryka operatora.
+      */
     public static class Factory extends UnaryRegexpOperatorFactory {
 
         @Override
@@ -42,6 +42,13 @@ public class AtLeastOneOperator extends UnaryRegexpOperator {
             return new AtLeastOneOperator();
         }
     }
+
+    /**
+     * Metoda toString().
+     */
+    @Override
+    public String toString() {
+        return "AT_LEAST_ONE";
+    }
+
 }
-
-
