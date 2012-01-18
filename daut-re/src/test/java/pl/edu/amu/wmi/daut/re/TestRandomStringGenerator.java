@@ -21,7 +21,7 @@ public class TestRandomStringGenerator extends TestCase {
         List<String>  randomWords = generateRandomWords(generator, N);
         assertTrue(listContains(randomWords, ""));
     }
-    
+
     /**
      * Metoda testująca RandomStringGenerator.
      * Niepuste słowo.
