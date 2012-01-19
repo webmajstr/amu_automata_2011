@@ -113,4 +113,27 @@ public class TestToString extends TestCase {
                 "ALTERNATIVE\n|_RANGE_NUMBER_OF_OCCURRENCES_FROM_4_TO_7\n"
                 + "|  |_TAB\n|_KLEENE_STAR\n|  |_OPTIONALITY\n|    |_WHITESPACE\n");
     }
+
+    /**
+     * Test sprawdzający AnyOrderOperator, AtLeastOneOperator,
+     * AsciiCharacterClassOperator i DoNothingOperator.
+     */
+    public final void testToString6() throws Exception {
+        List<RegexpOperatorTree> subtrees = new ArrayList<RegexpOperatorTree>();
+        List<RegexpOperatorTree> subtrees3 = new ArrayList<RegexpOperatorTree>();
+        RegexpOperator root = new AnyOrderOperator();
+        RegexpOperator s1 = new AtLeastOneOperator();
+        RegexpOperator s2 = new DoNothingOperator();
+        RegexpOperator s3 = new AsciiCharacterClassOperator("alnum");
+        RegexpOperatorTree tree3 = new RegexpOperatorTree(s3, subtrees3);
+        subtrees3.add(tree3);
+        RegexpOperatorTree tree2 = new RegexpOperatorTree(s1, subtrees3);
+        subtrees.add(tree2);
+        RegexpOperatorTree tree1 = new RegexpOperatorTree(s2, subtrees);
+        subtrees.add(tree1);
+        RegexpOperatorTree tree = new RegexpOperatorTree(root, subtrees);
+        assertEquals(tree.getHumanReadableFormat(),
+                "ANY_ORDER\n|_AT_LEAST_ONE\n"
+                + "|  |_ASCII\n|_DO_NOTHING\n|  |_AT_LEAST_ONE\n|    |_ASCII\n");
+    }
 }
