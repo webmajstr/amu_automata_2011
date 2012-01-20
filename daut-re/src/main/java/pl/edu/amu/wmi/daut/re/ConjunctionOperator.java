@@ -15,7 +15,7 @@ public class ConjunctionOperator extends BinaryRegexpOperator {
      * Domyślny konstruktor.
      */
     public ConjunctionOperator() { }
-    
+
     @Override
     public AutomatonSpecification createAutomatonFromTwoAutomata(
            AutomatonSpecification leftSubautomaton,
