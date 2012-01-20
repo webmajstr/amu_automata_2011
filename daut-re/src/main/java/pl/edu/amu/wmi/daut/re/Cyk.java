@@ -45,9 +45,12 @@ public class Cyk {
                                 if (first != null && secound != null) {
                                     for (int l = 0; l < grammarSize; l++) {
                                         GrammarRule gr = grammar.allRules().get(l);
-                                        if (first.toString().equals(gr.getRhsFirstSymbol().toString())
-                                            && secound.toString().equals(
-                                            gr.getRhsSecondSymbol().toString())) {
+                                        String firstStr = first.toString();
+                                        String firstGrStr = gr.getRhsFirstSymbol().toString();
+                                        String secoundStr = secound.toString();
+                                        String secoundGrStr = gr.getRhsSecondSymbol().toString();
+                                        if (firstStr.equals(firstGrStr)
+                                                && secoundStr.equals(secoundGrStr)) {
                                             tab[i][j][l] = gr.getLhsSymbol();
                                         }
                                     }
