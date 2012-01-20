@@ -20,7 +20,7 @@ public class ConjunctionOperator extends BinaryRegexpOperator {
     public AutomatonSpecification createAutomatonFromTwoAutomata(
            AutomatonSpecification leftSubautomaton,
            AutomatonSpecification rightSubautomaton) {
-        return AutomataOperations.intersection(leftSubautomaton, leftSubautomaton);
+        return AutomataOperations.intersection(leftSubautomaton, rightSubautomaton);
     }
 
     /**
