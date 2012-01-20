@@ -7,7 +7,7 @@ import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
 /**
-* Klasa reprezentuj¹c¹ operator '{n,}' z wyra¿eñ regularnych.
+* Klasa reprezentujaca operator '{n,}' z wyrazen regularnych.
 */
 public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
 
@@ -21,7 +21,7 @@ public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
     }
 
     /**
-     * G³ówna metoda klasy.
+     * Glowna metoda klasy.
      */
     public AutomatonSpecification createAutomatonFromOneAutomaton(
             AutomatonSpecification subautomaton) {
