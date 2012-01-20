@@ -9,15 +9,15 @@ import java.util.List;
 /**
 * Klasa reprezentujaca operator '{n,}' z wyrazen regularnych.
 */
-public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
+public class MinimumNumberOfOccurencesOperator extends UnaryRegexpOperator {
 
-    private int numberOfOccurrences;
+    private int numberOfOccurences;
 
     /**
      * Konstruktor klasy.
      */
-    public MinimumNumberOfOccurrencesOperator(int x) {
-        numberOfOccurrences = x;
+    public MinimumNumberOfOccurencesOperator(int x) {
+        numberOfOccurences = x;
     }
 
     /**
@@ -28,15 +28,15 @@ public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
 
         AutomatonSpecification newAutomaton = new NaiveAutomatonSpecification();
 
-        if (numberOfOccurrences == 0) {
+        if (numberOfOccurences == 0) {
             State state = newAutomaton.addState();
             newAutomaton.markAsInitial(state);
             newAutomaton.markAsFinal(state);
         }
 
-        if (numberOfOccurrences > 0) {
+        if (numberOfOccurences > 0) {
             newAutomaton = subautomaton.clone();
-            for (int i = 1; i < numberOfOccurrences; i++) {
+            for (int i = 1; i < numberOfOccurences; i++) {
                 State newState = newAutomaton.addState();
 
                 for (State state : newAutomaton.allStates()) {
@@ -69,7 +69,7 @@ public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
         }
 
         protected RegexpOperator doCreateOperator(List<String> params) {
-            return new MinimumNumberOfOccurrencesOperator(Integer.parseInt(params.get(0)));
+            return new MinimumNumberOfOccurencesOperator(Integer.parseInt(params.get(0)));
         }
     }
 
@@ -78,7 +78,7 @@ public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
      */
     @Override
     public String toString() {
-        return "MINIMUM_" + numberOfOccurrences + "_TIMES";
+        return "MINIMUM_" + numberOfOccurences + "_TIMES";
     }
 
 }
