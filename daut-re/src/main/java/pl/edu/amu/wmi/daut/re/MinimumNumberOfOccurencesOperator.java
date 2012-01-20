@@ -53,6 +53,7 @@ public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
                 if (newAutomaton.isFinal(state)) {
                     newAutomaton.addTransition(state, newState, new EpsilonTransitionLabel());
                 }
+            }
         }
         return newAutomaton;
     }
