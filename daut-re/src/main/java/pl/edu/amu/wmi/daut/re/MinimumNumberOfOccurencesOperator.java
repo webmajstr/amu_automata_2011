@@ -1,40 +1,83 @@
 package pl.edu.amu.wmi.daut.re;
 
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
+import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.EpsilonTransitionLabel;
 import pl.edu.amu.wmi.daut.base.State;
+import java.util.List;
 
 /**
- * Klasa reprezentujaca operator {n,} z wyrazen regularnych
- * element wystepuje co najmniej n razy
- */
-public abstract class MinimumNumberOfOccurencesOperator extends UnaryRegexpOperator {
-    private int n;
-    public MinimumNumberOfOccurencesOperator(int x) {
-		this.n = x;
-	}
+* Klasa reprezentuj¹c¹ operator '{n,}' z wyra¿eñ regularnych.
+*/
+public class MinimumNumberOfOccurrencesOperator extends UnaryRegexpOperator {
 
-    public AutomatonSpecification createAutomatonFromOneAutomaton(AutomatonSpecification subautomaton) {
-        AutomatonSpecification inputautomat = subautomaton.clone();
-        AutomatonSpecification newautomat = subautomaton.clone();
-        for (int i = 0; i < this.n - 1; i++) {
-            for (State stan : newautomat.allStates()) {
-                if (newautomat.isFinal(stan)) {
-                    newautomat.addTransition(stan, inputautomat.getInitialState(), new EpsilonTransitionLabel());
-                    newautomat.unmarkAsFinalState(stan);
-                }
-            }
-        }
-        for (State stan : inputautomat.allStates()) {
-            if (inputautomat.isFinal(stan)) {
-                inputautomat.addTransition(stan, inputautomat.getInitialState(), new EpsilonTransitionLabel());
-            }
-        }
-        for (State stan : newautomat.allStates()) {
-            if (newautomat.isFinal(stan)) {
-                    newautomat.addTransition(stan, inputautomat.getInitialState(), new EpsilonTransitionLabel());
-            }
-        }
-        return newautomat;
+    private int numberOfOccurrences;
+
+    /**
+     * Konstruktor klasy.
+     */
+    public MinimumNumberOfOccurrencesOperator(int x) {
+        numberOfOccurrences = x;
     }
+
+    /**
+     * G³ówna metoda klasy.
+     */
+    public AutomatonSpecification createAutomatonFromOneAutomaton(
+            AutomatonSpecification subautomaton) {
+
+        AutomatonSpecification newAutomaton = new NaiveAutomatonSpecification();
+
+        if (numberOfOccurrences == 0) {
+            State state = newAutomaton.addState();
+            newAutomaton.markAsInitial(state);
+            newAutomaton.markAsFinal(state);
+        }
+
+        if (numberOfOccurrences > 0) {
+            newAutomaton = subautomaton.clone();
+            for (int i = 1; i < numberOfOccurrences; i++) {
+                State newState = newAutomaton.addState();
+
+                for (State state : newAutomaton.allStates()) {
+                    if (newAutomaton.isFinal(state)) {
+                        newAutomaton.addTransition(state, newState, new EpsilonTransitionLabel());
+                        newAutomaton.unmarkAsFinalState(state);
+                    }
+                }
+                newAutomaton.insert(newState, subautomaton);
+            }
+            State newState=newAutomaton.addState();
+            newAutomaton.insert(newState, subautomaton);
+            for (State state : newAutomaton.allStates()) {
+                if (newAutomaton.isFinal(state)) {
+                    newAutomaton.addTransition(state, newState, new EpsilonTransitionLabel());
+                }
+        }
+        return newAutomaton;
+    }
+
+     /**
+     * Fabryka operatora.
+     */
+    public static class Factory extends UnaryRegexpOperatorFactory {
+
+        @Override
+        public int numberOfParams() {
+            return 1;
+        }
+
+        protected RegexpOperator doCreateOperator(List<String> params) {
+            return new MinimumNumberOfOccurrencesOperator(Integer.parseInt(params.get(0)));
+        }
+    }
+
+    /**
+     * Metoda toString().
+     */
+    @Override
+    public String toString() {
+        return "MINIMUM_" + numberOfOccurrences + "_TIMES";
+    }
+
 }
