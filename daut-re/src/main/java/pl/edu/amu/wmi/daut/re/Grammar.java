@@ -15,9 +15,10 @@ public class Grammar {
     /**
      * Konstruktor - rules to lista reguł, startSymbol - symbol początkowy.
      */
-    public Grammar(List<GrammarRule> rules, GrammarNonterminalSymbol startSymbol) {
+    public Grammar(List<GrammarRule> ruless, GrammarNonterminalSymbol startSymbol) {
+        this.rules = new Vector<GrammarRule>();
         this.startSymbol = startSymbol;
-        for (GrammarRule rule : rules) {
+        for (GrammarRule rule : ruless) {
             this.rules.add(rule);
         }
     }
