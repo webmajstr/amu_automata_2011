@@ -47,7 +47,7 @@ public class MinimumNumberOfOccurencesOperator extends UnaryRegexpOperator {
                 }
                 newAutomaton.insert(newState, subautomaton);
             }
-            State newState=newAutomaton.addState();
+            State newState = newAutomaton.addState();
             newAutomaton.insert(newState, subautomaton);
             for (State state : newAutomaton.allStates()) {
                 if (newAutomaton.isFinal(state)) {
