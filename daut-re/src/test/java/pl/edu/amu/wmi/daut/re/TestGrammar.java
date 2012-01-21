@@ -1,4 +1,3 @@
-
 package pl.edu.amu.wmi.daut.re;
 
 import java.util.Vector;
@@ -25,7 +24,6 @@ public class TestGrammar extends TestCase {
         Grammar gr1 = new Grammar(rules, nonterminal);
         gr.addRule(rule);
         gr.addRule(rule1);
-
 
         assertFalse(gr1.allRules().isEmpty());
         assertTrue(gr.allRules().containsAll(rules));
