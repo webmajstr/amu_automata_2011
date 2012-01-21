@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 import junit.framework.TestCase;
 
+/**
+ * @author dyskograf
+ * Test klasy ExtendedPosixOperatorManager.
+ */
 public class TestExtendedPosixRegexpOperatorManager extends TestCase {
 
     /**
@@ -13,7 +17,7 @@ public class TestExtendedPosixRegexpOperatorManager extends TestCase {
     public final void testGetPriority() {
 
         ExtendedPosixRegexpOperatorManager manager = new ExtendedPosixRegexpOperatorManager();
-        
+
         assertTrue(manager.getPriority("*") < manager.getPriority("()"));
         assertTrue(manager.getPriority("+") < manager.getPriority("()"));
         assertTrue(manager.getPriority("?") < manager.getPriority("()"));
@@ -26,7 +30,7 @@ public class TestExtendedPosixRegexpOperatorManager extends TestCase {
     public final void testGetFactory() {
 
         ExtendedPosixRegexpOperatorManager manager = new ExtendedPosixRegexpOperatorManager();
-        
+
         assertNotNull(manager);
         assertNotNull(manager.getFactory("*"));
         assertNotNull(manager.getFactory("+"));
@@ -41,7 +45,7 @@ public class TestExtendedPosixRegexpOperatorManager extends TestCase {
     /**
      * Test metody getOperatorsForStringPrefix.
      */
-	public final void testGetOperatorsForStringPrefix() {
+    public final void testGetOperatorsForStringPrefix() {
 
         ExtendedPosixRegexpOperatorManager manager = new ExtendedPosixRegexpOperatorManager();
         List<String> string = new ArrayList<String>();
