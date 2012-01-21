@@ -8,7 +8,7 @@ import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 
 /**
 * Klasa reprezentująca znak powrotu karetki
- * (znak o kodzie 13, \r w wyrażeniach regularnych).
+* (znak o kodzie 13, \r w wyrażeniach regularnych).
 */
 public class CarriageReturnOperator extends RegexpOperator {
 
@@ -29,10 +29,10 @@ public class CarriageReturnOperator extends RegexpOperator {
              NaiveAutomatonSpecification().makeOneTransitionAutomaton('\13');
     }
 
-        /**
-     * Fabryka operatora.
-     */
-    public static class Factory extends RegexpOperatorFactory {
+/**
+* Fabryka operatora.
+*/
+public static class Factory extends RegexpOperatorFactory {
 
         @Override
         public int arity() {
@@ -49,16 +49,14 @@ public class CarriageReturnOperator extends RegexpOperator {
             return new CarriageReturnOperator();
         }
     }
-    
-    
-       /**
-     * Metoda toString().
-     */
-    @Override
-    public String toString() {
+
+
+/**
+* Metoda toString().
+*/
+@Override
+public String toString() {
         return "/r";
     }
-
-    
 
 }
