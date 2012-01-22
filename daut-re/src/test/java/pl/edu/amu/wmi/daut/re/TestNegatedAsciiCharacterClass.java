@@ -38,7 +38,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("Z"));
         assertFalse(automaton.accepts("9"));
         assertFalse(automaton.accepts(""));
-        
         assertTrue(automaton.accepts("]"));
         assertTrue(automaton.accepts("$"));
         assertTrue(automaton.accepts("@"));
@@ -57,7 +56,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
                 new ArrayList<AutomatonSpecification>()));
         assertFalse(automaton.accepts("a"));
         assertFalse(automaton.accepts("Z"));
-        
         assertTrue(automaton.accepts("]"));
         assertTrue(automaton.accepts("$"));
         assertTrue(automaton.accepts("5"));
@@ -93,7 +91,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
                 new ArrayList<AutomatonSpecification>()));
         assertFalse(automaton.accepts("\u0000"));
         assertFalse(automaton.accepts("\u0001"));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
@@ -115,7 +112,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("4"));
         assertFalse(automaton.accepts("1"));
         assertFalse(automaton.accepts("9"));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("$"));
@@ -135,7 +131,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("!"));
         assertFalse(automaton.accepts("~"));
         assertFalse(automaton.accepts("-"));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
@@ -155,7 +150,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("z"));
         assertFalse(automaton.accepts("a"));
         assertFalse(automaton.accepts("g"));
-        
         assertTrue(automaton.accepts("A"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
@@ -180,7 +174,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("\""));
         assertFalse(automaton.accepts("("));
         assertFalse(automaton.accepts("0"));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
@@ -201,7 +194,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("/"));
         assertFalse(automaton.accepts("@"));
         assertFalse(automaton.accepts("["));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
@@ -222,7 +214,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("\t"));
         assertFalse(automaton.accepts("\n"));
         assertFalse(automaton.accepts("\f"));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
@@ -243,7 +234,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("C"));
         assertFalse(automaton.accepts("G"));
         assertFalse(automaton.accepts("Z"));
-        
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("s"));
         assertTrue(automaton.accepts("9"));
@@ -264,7 +254,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("B"));
         assertFalse(automaton.accepts("_"));
         assertFalse(automaton.accepts("9"));
-        
         assertTrue(automaton.accepts("!"));
         assertTrue(automaton.accepts("("));
         assertTrue(automaton.accepts("%"));
@@ -287,7 +276,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("f"));
         assertFalse(automaton.accepts("F"));
         assertFalse(automaton.accepts("a"));
-        
         assertTrue(automaton.accepts("!"));
         assertTrue(automaton.accepts("("));
         assertTrue(automaton.accepts("%"));
