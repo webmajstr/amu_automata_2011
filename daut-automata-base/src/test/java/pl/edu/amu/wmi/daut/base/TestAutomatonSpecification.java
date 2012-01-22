@@ -1110,7 +1110,7 @@ public class TestAutomatonSpecification extends TestCase {
         assertTrue(spec.isNotEmpty());
     }
 
-      /**
+     /**
      * Test metody testUnmark.
      */
     public final void testUnmark() {

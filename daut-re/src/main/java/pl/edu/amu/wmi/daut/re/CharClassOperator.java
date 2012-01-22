@@ -10,7 +10,7 @@ public class CharClassOperator extends NullaryRegexpOperator {
 
     /**
     * Konstruktor, pobiera porzadana klase znakow.
-    **/
+    */
     public CharClassOperator(String c) {
         this.charClass = c;
     }

@@ -95,7 +95,7 @@ public class TestNotNaiveAutomatonSpecification extends TestCase {
         assertTrue(spec.isFull("ab"));
     }
     
-      /**
+     /**
      * Test metody testUnmark.
      */
     public final void testUnmark() {
