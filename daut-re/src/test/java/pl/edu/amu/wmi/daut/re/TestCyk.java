@@ -10,21 +10,21 @@ import junit.framework.TestCase;
  */
 public class TestCyk extends TestCase {
     private HashMap<String, GrammarNonterminalSymbol> 
-            nonterminalSymbol = new HashMap<String, GrammarNonterminalSymbol>();
+            ntSymbol = new HashMap<String, GrammarNonterminalSymbol>();
     private HashMap<String, GrammarTerminalSymbol> 
-            terminalSymbol = new HashMap<String, GrammarTerminalSymbol>();
+            tSymbol = new HashMap<String, GrammarTerminalSymbol>();
     private List<GrammarRule> rules = new ArrayList<GrammarRule>();
     private List<GrammarTerminalSymbol> word = new ArrayList<GrammarTerminalSymbol>();
     /**
      * Generowanie symobli terminalnych i nieterminalnych.
      */
-    private final void generateSymobols() {
-        nonterminalSymbol.put("S", new GrammarNonterminalSymbol('S'));
-        nonterminalSymbol.put("A", new GrammarNonterminalSymbol('A'));
-        nonterminalSymbol.put("B", new GrammarNonterminalSymbol('B'));
-        nonterminalSymbol.put("C", new GrammarNonterminalSymbol('C'));
-        terminalSymbol.put("a", new GrammarTerminalSymbol('a'));
-        terminalSymbol.put("b", new GrammarTerminalSymbol('b'));
+    private void generateSymobols() {
+        ntSymbol.put("S", new GrammarNonterminalSymbol('S'));
+        ntSymbol.put("A", new GrammarNonterminalSymbol('A'));
+        ntSymbol.put("B", new GrammarNonterminalSymbol('B'));
+        ntSymbol.put("C", new GrammarNonterminalSymbol('C'));
+        tSymbol.put("a", new GrammarTerminalSymbol('a'));
+        tSymbol.put("b", new GrammarTerminalSymbol('b'));
     }
     /**
      * Pierwszy test klasy Cyk.
@@ -33,19 +33,16 @@ public class TestCyk extends TestCase {
         generateSymobols();
         rules.clear();
         word.clear();
-        rules.add(new GrammarRule(nonterminalSymbol.get("S"), 
-                nonterminalSymbol.get("A"), nonterminalSymbol.get("C")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("C"), 
-                nonterminalSymbol.get("S"), nonterminalSymbol.get("B")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("S"), 
-                nonterminalSymbol.get("A"), nonterminalSymbol.get("B")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("A"), terminalSymbol.get("a")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("B"), terminalSymbol.get("b")));
-        Cyk cyk = new Cyk(new Grammar(rules, nonterminalSymbol.get("S")));
-        word.add(terminalSymbol.get("a"));
-        word.add(terminalSymbol.get("a"));
-        word.add(terminalSymbol.get("b"));
-        word.add(terminalSymbol.get("b"));
+        rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("A"), ntSymbol.get("C")));
+        rules.add(new GrammarRule(ntSymbol.get("C"), ntSymbol.get("S"), ntSymbol.get("B")));
+        rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("A"), ntSymbol.get("B")));
+        rules.add(new GrammarRule(ntSymbol.get("A"), tSymbol.get("a")));
+        rules.add(new GrammarRule(ntSymbol.get("B"), tSymbol.get("b")));
+        Cyk cyk = new Cyk(new Grammar(rules, ntSymbol.get("S")));
+        word.add(tSymbol.get("a"));
+        word.add(tSymbol.get("a"));
+        word.add(tSymbol.get("b"));
+        word.add(tSymbol.get("b"));
         assertTrue(cyk.accepts(word));
     }
     /**
@@ -55,24 +52,19 @@ public class TestCyk extends TestCase {
         generateSymobols();
         rules.clear();
         word.clear();
-        rules.add(new GrammarRule(nonterminalSymbol.get("S"), 
-                nonterminalSymbol.get("A"), nonterminalSymbol.get("B")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("S"), 
-                nonterminalSymbol.get("B"), nonterminalSymbol.get("C")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("A"), 
-                nonterminalSymbol.get("B"), nonterminalSymbol.get("A")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("A"), terminalSymbol.get("a")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("B"), 
-                nonterminalSymbol.get("C"), nonterminalSymbol.get("C")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("B"), terminalSymbol.get("b")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("C"), 
-                nonterminalSymbol.get("A"), nonterminalSymbol.get("B")));
-        rules.add(new GrammarRule(nonterminalSymbol.get("C"), terminalSymbol.get("a")));
-        Cyk cyk = new Cyk(new Grammar(rules, nonterminalSymbol.get("S")));
-        word.add(terminalSymbol.get("a"));
-        word.add(terminalSymbol.get("b"));
-        word.add(terminalSymbol.get("a"));
-        word.add(terminalSymbol.get("b"));
+        rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("A"), ntSymbol.get("B")));
+        rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("B"), ntSymbol.get("C")));
+        rules.add(new GrammarRule(ntSymbol.get("A"), ntSymbol.get("B"), ntSymbol.get("A")));
+        rules.add(new GrammarRule(ntSymbol.get("A"), tSymbol.get("a")));
+        rules.add(new GrammarRule(ntSymbol.get("B"), ntSymbol.get("C"), ntSymbol.get("C")));
+        rules.add(new GrammarRule(ntSymbol.get("B"), tSymbol.get("b")));
+        rules.add(new GrammarRule(ntSymbol.get("C"), ntSymbol.get("A"), ntSymbol.get("B")));
+        rules.add(new GrammarRule(ntSymbol.get("C"), tSymbol.get("a")));
+        Cyk cyk = new Cyk(new Grammar(rules, ntSymbol.get("S")));
+        word.add(tSymbol.get("a"));
+        word.add(tSymbol.get("b"));
+        word.add(tSymbol.get("a"));
+        word.add(tSymbol.get("b"));
         assertTrue(cyk.accepts(word));
     }
 }
