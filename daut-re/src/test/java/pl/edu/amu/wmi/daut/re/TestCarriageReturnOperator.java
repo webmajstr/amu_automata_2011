@@ -18,7 +18,7 @@ public class TestCarriageReturnOperator extends TestCase {
 
     public void testCreateFixedAutomaton() {
 
-        NewLineOperator operator = new NewLineOperator();
+        CarriageReturnOperator operator = new CarriageReturnOperator();
         AutomatonSpecification spec = operator.createFixedAutomaton();
         assertFalse(spec.isEmpty());
         assertFalse(spec.acceptEmptyWord());
