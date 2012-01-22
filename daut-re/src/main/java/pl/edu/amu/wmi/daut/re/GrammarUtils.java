@@ -22,18 +22,18 @@ public class GrammarUtils {
                 if ((regula.getRhsFirstSymbol().getClass()
                         == GrammarNonterminalSymbol.class)
                         && (regula.getRhsSecondSymbol().getClass()
-                                == GrammarNonterminalSymbol.class))
-                { wynik = true; }
-                    else
-                    { wynik = false; }
+                                == GrammarNonterminalSymbol.class)) {
+                    wynik = true; 
+                } else {
+                        wynik = false; }
                 } else if (regula.getArity() == 1) {
                     if (regula.getRhsFirstSymbol().getClass()
-                            == GrammarTerminalSymbol.class)
-                    { wynik = true; }
-                    else
-                    { wynik = false; }
-            } else
-            { wynik = false; }
+                            == GrammarTerminalSymbol.class) {
+                        wynik = true; 
+                } else {
+                        wynik = false; }
+            } else {
+                wynik = false; }
         }
         return wynik;
     }
