@@ -9,6 +9,7 @@ import junit.framework.TestCase;
  * Test klasy Grammar.
  */
 public class TestGrammar extends TestCase {
+
     /**
      * Test sprawdzający działanie wszystkich metod klasy.
      */
