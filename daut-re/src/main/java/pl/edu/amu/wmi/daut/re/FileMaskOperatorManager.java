@@ -16,7 +16,7 @@ public class FileMaskOperatorManager extends RegexpOperatorManager {
      * Konstruktor klasy.
      */
     public FileMaskOperatorManager() {
-        addOperator("*", new AnyStringOperatorFactory,
+        addOperator("*", new AnyStringOperator.Factory(),
                     Arrays.<String>asList("", "*"), MEDIUM_PRIORITY);
         addOperator("?", new AnyCharOperator.Factory(),
                     Arrays.<String>asList("?"), MEDIUM_PRIORITY);
