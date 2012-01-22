@@ -14,6 +14,19 @@ public class TestRandomStringGenerator extends TestCase {
 
     /**
      * Metoda testująca RandomStringGenerator.
+     * Pusty alfabet.
+     */
+    public void testNullAlphabet() {
+        try {
+            new RandomStringGenerator(null);
+            fail("Creating null alphabet shouldn't be available");
+        } catch (IllegalArgumentException e) {
+        	return 0;
+        }
+    }
+
+    /**
+     * Metoda testująca RandomStringGenerator.
      * Puste słowo.
      */
     public void testIsEmptyWordPresent() {
