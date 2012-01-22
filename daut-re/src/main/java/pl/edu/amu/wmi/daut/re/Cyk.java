@@ -47,15 +47,11 @@ public class Cyk {
                                         GrammarRule gr = grammar.allRules().get(l);
                                         String firstStr = first.toString();
                                         String firstGrStr = gr.getRhsFirstSymbol().toString();
-                                        String secoundStr = secound.toString();
-                                        try {
-                                            String secGrStr = gr.getRhsSecondSymbol().toString();
-                                            if (firstStr.equals(firstGrStr)
-                                                && secoundStr.equals(secGrStr)) {
-                                                tab[i][j][l] = gr.getLhsSymbol();
-                                            }
-                                        } catch (OutOfRhsBordersException ex) {
-                                            if (firstStr.equals(firstGrStr)) {
+                                        if (firstStr.equals(firstGrStr)) {
+                                            String secoundStr = secound.toString();
+                                            String secoundGrStr = gr.getRhsSecondSymbol()
+                                                                    .toString();
+                                            if (secoundStr.equals(secoundGrStr)) {
                                                 tab[i][j][l] = gr.getLhsSymbol();
                                             }
                                         }
