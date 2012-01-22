@@ -7,7 +7,7 @@ import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import junit.framework.TestCase;
-import pl.edu.amu.wmi.daut.re.FixedNumberOfOccurrencesOperator.Factory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,27 +89,27 @@ public class TestFixedNumberOfOccurrencesOperator extends TestCase {
     * Test 3. Pusty automat.
     */
 public final void testEmptyAutomaton() {
-         
+        
           AutomatonSpecification automaton = new NaiveAutomatonSpecification();
-         
+
           FixedNumberOfOccurrencesOperator oper =
                 new FixedNumberOfOccurrencesOperator(666);
-          
+
           NondeterministicAutomatonByThompsonApproach result =
                 new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
-          
-          assertFalse(result.accepts("ManchesterUnited"));  
-     }    
+
+          assertFalse(result.accepts("ManchesterUnited")); 
+     }
 
     /**
     * Test 4. Automat z trzema stanami. Od początkowego stanu q0 wychodzą dwa
     * przejścia do stanu do stanu q1 poprzez 'a' i do stanu q2 poprzez 'b'.
-    * Stany q1 i q1 są stanami akceptowalnymi. 
+    * Stany q1 i q1 są stanami akceptowalnymi.
     */
 
 public final void testThreeStatesTwoFinalStates() {
-    
+
      AutomatonSpecification automaton = new NaiveAutomatonSpecification();
 
         State q0 = automaton.addState();
@@ -117,24 +117,24 @@ public final void testThreeStatesTwoFinalStates() {
         State q2 = automaton.addState();
         automaton.addTransition(q0, q1, new CharTransitionLabel('a'));
         automaton.addTransition(q0, q2, new CharTransitionLabel('b'));
-        
+  
         automaton.markAsInitial(q0);
         automaton.markAsFinal(q1);
         automaton.markAsFinal(q2);
-        
+
         FixedNumberOfOccurrencesOperator oper =
                 new FixedNumberOfOccurrencesOperator(3);
-        
+
         NondeterministicAutomatonByThompsonApproach result =
         new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
-        
+
 
         assertTrue(result.accepts("aaa"));
         assertTrue(result.accepts("bba"));
         assertTrue(result.accepts("aab"));
         assertFalse(result.accepts("aabb"));
-        assertFalse(result.accepts("LechPoznan"));  
+        assertFalse(result.accepts("LechPoznan"));
 }
     /**
      * Test fabryki.
