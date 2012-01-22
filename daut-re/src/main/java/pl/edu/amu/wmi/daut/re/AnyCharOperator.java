@@ -1,4 +1,4 @@
-package pl.edu.amu.wmi.daut.re;
+ï»¿package pl.edu.amu.wmi.daut.re;
 
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
@@ -7,7 +7,7 @@ import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
 /**
-* Klasa reprezentuj¹ca operator '.' z wyra¿eñ regularnych (dowolny znak).
+* Klasa reprezentujÄ…ca operator '.' z wyraÅ¼eÅ„ regularnych (dowolny znak).
 */
 public class AnyCharOperator extends NullaryRegexpOperator {
     @Override
