@@ -7,7 +7,6 @@ import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import junit.framework.TestCase;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,7 +88,7 @@ public class TestFixedNumberOfOccurrencesOperator extends TestCase {
     * Test 3. Pusty automat.
     */
 public final void testEmptyAutomaton() {
-        
+
           AutomatonSpecification automaton = new NaiveAutomatonSpecification();
 
           FixedNumberOfOccurrencesOperator oper =
@@ -99,7 +98,7 @@ public final void testEmptyAutomaton() {
                 new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
 
-          assertFalse(result.accepts("ManchesterUnited")); 
+          assertFalse(result.accepts("ManchesterUnited"));
      }
 
     /**
@@ -117,7 +116,7 @@ public final void testThreeStatesTwoFinalStates() {
         State q2 = automaton.addState();
         automaton.addTransition(q0, q1, new CharTransitionLabel('a'));
         automaton.addTransition(q0, q2, new CharTransitionLabel('b'));
-  
+
         automaton.markAsInitial(q0);
         automaton.markAsFinal(q1);
         automaton.markAsFinal(q2);
