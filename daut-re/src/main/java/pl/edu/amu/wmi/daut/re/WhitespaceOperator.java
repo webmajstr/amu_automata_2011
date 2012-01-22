@@ -42,4 +42,10 @@ public class WhitespaceOperator extends NullaryRegexpOperator {
             return new WhitespaceOperator();
         }
     }
+
+    @Override
+    public String toString() {
+        return "WHITESPACE";
+    }
+
 }
