@@ -2,28 +2,28 @@ package pl.edu.amu.wmi.daut.re;
 
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
+import pl.edu.amu.wmi.daut.base.AnyTransitionLabel;
+import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
 /**
- * Klasa reprezentujÄ…ca operator '.' z wyraÅ¼eÅ„ regularnych (dowolny znak).
- */
+* Klasa reprezentuj¹ca operator '.' z wyra¿eñ regularnych (dowolny znak).
+*/
 public class AnyCharOperator extends NullaryRegexpOperator {
-    private char character;
-
-    /**
-     * Metoda, ustawia poÅ¼Ä…dany znak.
-     */
-    public void setCharacter(char c) {
-        this.character = c;
-    }
     @Override
     public AutomatonSpecification createFixedAutomaton() {
-        return new NaiveAutomatonSpecification().makeOneTransitionAutomaton(character);
+        AutomatonSpecification automaton = new NaiveAutomatonSpecification();
+        State q0 = automaton.addState();
+        State q1 = automaton.addState();
+        automaton.addTransition(q0, q1, new AnyTransitionLabel());
+        automaton.markAsInitial(q0);
+        automaton.markAsFinal(q1);
+        return automaton;
     }
 
-     /**
-     * Fabryka operatora.
-     */
+    /**
+    * Fabryka operatora.
+    */
     public static class Factory extends NullaryRegexpOperatorFactory {
 
         @Override
@@ -36,12 +36,12 @@ public class AnyCharOperator extends NullaryRegexpOperator {
         }
     }
 
-    /**
-     * Metoda toString().
-     */
+	/**
+    * Metoda toString().
+    */
     @Override
     public String toString() {
-        return "ANY_CHAR_" + character;
+        return "ANY_CHAR_OPERATOR";
     }
-
 }
+
