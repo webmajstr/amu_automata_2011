@@ -73,7 +73,7 @@ public class TestAnyOrderOperator extends TestCase {
         assertFalse(result1.accepts(""));
         assertFalse(result1.accepts(" "));  
         assertFalse(result1.accepts("asd"));
-        assertFalse(result1.accepts(''));
+        assertFalse(result1.accepts("epsilon"));
     }
     /**
      * Test fabryki.
