@@ -9,10 +9,10 @@ import junit.framework.TestCase;
  * Test klasy Cyl.
  */
 public class TestCyk extends TestCase {
-    private HashMap<String, GrammarNonterminalSymbol> 
-            ntSymbol = new HashMap<String, GrammarNonterminalSymbol>();
-    private HashMap<String, GrammarTerminalSymbol> 
-            tSymbol = new HashMap<String, GrammarTerminalSymbol>();
+    private HashMap<String, GrammarNonterminalSymbol> ntSymbol = new HashMap<String,
+            GrammarNonterminalSymbol>();
+    private HashMap<String, GrammarTerminalSymbol> tSymbol = new HashMap<String,
+            GrammarTerminalSymbol>();
     private List<GrammarRule> rules = new ArrayList<GrammarRule>();
     private List<GrammarTerminalSymbol> word = new ArrayList<GrammarTerminalSymbol>();
     /**

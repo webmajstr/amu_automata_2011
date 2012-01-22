@@ -49,9 +49,9 @@ public class Cyk {
                                         String firstGrStr = gr.getRhsFirstSymbol().toString();
                                         String secoundStr = secound.toString();
                                         try {
-                                            String secoundGrStr = gr.getRhsSecondSymbol().toString();
+                                            String secGrStr = gr.getRhsSecondSymbol().toString();
                                             if (firstStr.equals(firstGrStr)
-                                                && secoundStr.equals(secoundGrStr)) {
+                                                && secoundStr.equals(secGrStr)) {
                                                 tab[i][j][l] = gr.getLhsSymbol();
                                             }
                                         } catch (OutOfRhsBordersException ex) {
