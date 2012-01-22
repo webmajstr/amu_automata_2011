@@ -71,7 +71,7 @@ public class TestAnyOrderOperator extends TestCase {
                 operator1.createAutomatonFromTwoAutomata(automaton3, automaton4));
 
         assertFalse(result1.accepts(""));
-        assertFalse(result1.accepts(" "));  
+        assertFalse(result1.accepts(" "));
         assertFalse(result1.accepts("asd"));
         assertFalse(result1.accepts("epsilon"));
     }
