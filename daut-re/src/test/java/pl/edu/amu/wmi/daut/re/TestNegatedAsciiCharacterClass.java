@@ -166,8 +166,8 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         NondeterministicAutomatonByThompsonApproach automaton =
             new NondeterministicAutomatonByThompsonApproach(spec.createAutomaton(
                 new ArrayList<AutomatonSpecification>()));
-        assertTrue(!automaton.accepts(" "));
-        assertTrue(!automaton.accepts("a"));
+        assertFalse(automaton.accepts(" "));
+        assertFalse(automaton.accepts("a"));
         assertFalse(automaton.accepts("!"));
         assertFalse(automaton.accepts("*"));
         assertFalse(automaton.accepts("$"));
@@ -194,8 +194,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("/"));
         assertFalse(automaton.accepts("@"));
         assertFalse(automaton.accepts("["));
-        assertTrue(automaton.accepts("a"));
-        assertTrue(automaton.accepts("Z"));
         assertTrue(automaton.accepts("9"));
         assertFalse(automaton.accepts("3rre"));
     }
@@ -257,7 +255,8 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertTrue(automaton.accepts("!"));
         assertTrue(automaton.accepts("("));
         assertTrue(automaton.accepts("%"));
-        assertTrue(automaton.accepts("sfggg"));
+        assertFalse(automaton.accepts("dadada"));
+        assertFalse(automaton.accepts(""));
     }
 
     /**
@@ -279,7 +278,7 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertTrue(automaton.accepts("!"));
         assertTrue(automaton.accepts("("));
         assertTrue(automaton.accepts("%"));
-        assertTrue(automaton.accepts("sfggg"));
+        assertFalse(automaton.accepts("sfggg"));
     }
 
     /**
