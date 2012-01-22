@@ -65,6 +65,6 @@ public class TestCyk extends TestCase {
         word.add(tSymbol.get("b"));
         word.add(tSymbol.get("a"));
         word.add(tSymbol.get("b"));
-        assertTrue(cyk.accepts(word));
+        assertFalse(cyk.accepts(word));
     }
 }

@@ -174,7 +174,6 @@ public class TestNegatedAsciiCharacterClass extends TestCase {
         assertFalse(automaton.accepts("\""));
         assertFalse(automaton.accepts("("));
         assertFalse(automaton.accepts("0"));
-        assertTrue(automaton.accepts("9"));
         assertFalse(automaton.accepts("sdada"));
     }
 
