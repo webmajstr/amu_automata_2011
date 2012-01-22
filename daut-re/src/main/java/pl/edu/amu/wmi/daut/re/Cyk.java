@@ -55,6 +55,9 @@ public class Cyk {
                                                 tab[i][j][l] = gr.getLhsSymbol();
                                             }
                                         } catch (OutOfRhsBordersException ex) {
+                                            if (firstStr.equals(firstGrStr)) {
+                                                tab[i][j][l] = gr.getLhsSymbol();
+                                            }
                                         }
                                     }
                                 }
