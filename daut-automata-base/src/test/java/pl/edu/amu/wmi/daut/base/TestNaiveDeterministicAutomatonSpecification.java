@@ -75,7 +75,7 @@ public class TestNaiveDeterministicAutomatonSpecification extends TestCase {
         assertNotSame(test1, r5);
         assertNotSame(test4, r1);
     }
-    
+
      /**
      * Test metody testUnmark.
      */
