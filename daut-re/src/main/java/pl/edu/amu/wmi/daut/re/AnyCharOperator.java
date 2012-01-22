@@ -1,4 +1,4 @@
-﻿package pl.edu.amu.wmi.daut.re;
+package pl.edu.amu.wmi.daut.re;
 
 import pl.edu.amu.wmi.daut.base.AutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
