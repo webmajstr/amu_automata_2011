@@ -3,13 +3,13 @@ package pl.edu.amu.wmi.daut.base;
 import junit.framework.TestCase;
 
 /**
-* Klasa testujaca klase WordBoundaryTransitionLabel.
-*/
+ * Klasa testujaca klase WordBoundaryTransitionLabel.
+ */
 public class TestWordBoundaryTransitionLabel extends TestCase {
 
-/**
-* Test metody doCheckContext.
-*/
+    /**
+     * Test metody doCheckContext.
+     */
     public final void testDoCheckContext() {
         WordBoundaryTransitionLabel trans = new WordBoundaryTransitionLabel();
 
@@ -41,9 +41,9 @@ public class TestWordBoundaryTransitionLabel extends TestCase {
             assertTrue(true);
         }
 
-/**
-* Test atrybutów.
-*/
+        /**
+         * Test atrybutów.
+         */
 
         assertEquals(trans.toString(), "WordBoundary");
 
