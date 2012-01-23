@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class TestAnyOrderOperator extends TestCase {
 
-	/**
+    /**
      * Test konstruktora AnyOrderOperator.
      */
     public void testAnyOrderOperator() {
