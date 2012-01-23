@@ -9,9 +9,10 @@ import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import junit.framework.TestCase;
 import pl.edu.amu.wmi.daut.re.TestMinimumNumberOfOccurencesOperator;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Test klasy MnimumNumberOfOccurrencesOperator.
+ * Test klasy TestMinimumNumberOfOccurencesOperator.
  */
 
 public class TestMinimumNumberOfOccurencesOperator extends TestCase {
@@ -39,11 +40,11 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
 
 
         assertTrue(result.accepts("aaa"));
-		assertTrue(result.accepts("aaaa"));
-		assertTrue(result.accepts("aaaaa"));
-		assertTrue(result.accepts("aaaaaaaaaaaa"));
+        assertTrue(result.accepts("aaaa"));
+	assertTrue(result.accepts("aaaaa"));
+	assertTrue(result.accepts("aaaaaaaaaaaa"));
         assertFalse(result.accepts("aa"));
-		assertFalse(result.accepts("a"));
+	assertFalse(result.accepts("a"));
         assertFalse(result.accepts("LeagueOfLegends"));
     }
 
@@ -85,34 +86,33 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     /**
     * Pusty automat.
     */
-public final void testEmptyAutomaton() {
+    public final void testEmptyAutomaton() {
          
-          AutomatonSpecification automaton = new NaiveAutomatonSpecification();
+        AutomatonSpecification automaton = new NaiveAutomatonSpecification();
          
-          MinimumNumberOfOccurencesOperator oper =
-                new MinimumNumberOfOccurencesOperator(10);
+        MinimumNumberOfOccurencesOperator oper =
+            new MinimumNumberOfOccurencesOperator(10);
           
-          NondeterministicAutomatonByThompsonApproach result =
-                new NondeterministicAutomatonByThompsonApproach(
+        NondeterministicAutomatonByThompsonApproach result =
+            new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
           
-          assertFalse(result.accepts("aaaaaaaaaaaaaaaaaaaaaaaa"));  
-          assertFalse(result.accepts(""));  
-          assertFalse(result.accepts("a"));  
-          assertFalse(result.accepts("aaa")); 
-          assertFalse(result.accepts("Zonk"));  
-     }    
+        assertFalse(result.accepts("aaaaaaaaaaaaaaaaaaaaaaaa"));  
+        assertFalse(result.accepts(""));  
+        assertFalse(result.accepts("a"));  
+        assertFalse(result.accepts("aaa")); 
+        assertFalse(result.accepts("Zonk"));  
+    }    
 
     /**
-    * Test 4. Automat z trzema stanami. Od początkowego stanu q0 wychodzą dwa
-    * przejścia do stanu do stanu q1 poprzez 'a' i do stanu q2 poprzez 'b'.
-    * Stany q1 i q2 są stanami akceptowalnymi. 
+    * Automat z trzema stanami, od q0 wychodzą dwam przejścia do q1 i q2
+    * stany te są stanami akceptującymi
     */
 
-public final void testThreeStatesTwoFinalStates() {
+    public final void testThreeStatesTwoFinalStates() {
     
-     AutomatonSpecification automaton = new NaiveAutomatonSpecification();
-
+        AutomatonSpecification automaton = new NaiveAutomatonSpecification();
+   
         State q0 = automaton.addState();
         State q1 = automaton.addState();
         State q2 = automaton.addState();
@@ -124,10 +124,10 @@ public final void testThreeStatesTwoFinalStates() {
         automaton.markAsFinal(q2);
         
         MinimumNumberOfOccurencesOperator oper =
-                new MinimumNumberOfOccurencesOperator(3);
+            new MinimumNumberOfOccurencesOperator(3);
         
         NondeterministicAutomatonByThompsonApproach result =
-        new NondeterministicAutomatonByThompsonApproach(
+            new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
         
         assertTrue(result.accepts("aaaa"));
@@ -140,30 +140,33 @@ public final void testThreeStatesTwoFinalStates() {
         assertFalse(result.accepts("b"));
         assertFalse(result.accepts(""));
         assertFalse(result.accepts("ZlyTekst"));  
-}
+    }
 
 
-public final void testZeroRepeats() {
+    public final void testZeroRepeats() {
          
-          AutomatonSpecification automaton = new NaiveAutomatonSpecification();
+        AutomatonSpecification automaton = new NaiveAutomatonSpecification();
          
-          MinimumNumberOfOccurencesOperator oper =
-                new MinimumNumberOfOccurencesOperator(0);
+        MinimumNumberOfOccurencesOperator oper =
+            new MinimumNumberOfOccurencesOperator(0);
           
-          NondeterministicAutomatonByThompsonApproach result =
-                new NondeterministicAutomatonByThompsonApproach(
+        NondeterministicAutomatonByThompsonApproach result =
+            new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
           
-          assertTrue(result.accepts(""));  
-          assertFalse(result.accepts("a"));  
-          assertFalse(result.accepts("aaa")); 
-          assertFalse(result.accepts("Zonk"));  
-     }   
+        assertTrue(result.accepts(""));  
+        assertFalse(result.accepts("a"));  
+        assertFalse(result.accepts("aaa")); 
+        assertFalse(result.accepts("Zonk"));  
+    }   
 
-      //    (ac^nb)||(bd^na){3,}
-public final void testAlternativeLoops() {
+    /**
+    *  Automat akceptuje słowo (ac^nb)||(bd^na)
+    */ 
+    
+    public final void testAlternativeLoops() {
          
-          AutomatonSpecification automaton = new NaiveAutomatonSpecification();
+        AutomatonSpecification automaton = new NaiveAutomatonSpecification();
           
         State q0 = automaton.addState();
         State q1 = automaton.addState();
@@ -182,31 +185,33 @@ public final void testAlternativeLoops() {
         automaton.markAsFinal(q3);
         automaton.markAsFinal(q4);
                 
-          MinimumNumberOfOccurencesOperator oper =
-                new MinimumNumberOfOccurencesOperator(3);
+        MinimumNumberOfOccurencesOperator oper =
+            new MinimumNumberOfOccurencesOperator(3);
           
           
-          NondeterministicAutomatonByThompsonApproach result =
-                new NondeterministicAutomatonByThompsonApproach(
+        NondeterministicAutomatonByThompsonApproach result =
+            new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
           
-          assertTrue(result.accepts("acbbdabdda"));  
-          assertTrue(result.accepts("ababab"));  
-          assertTrue(result.accepts("abbaab"));   
-          assertTrue(result.accepts("accccccbbdddaab"));
-          assertFalse(result.accepts("aaa")); 
-          assertFalse(result.accepts("abba")); 
-          assertFalse(result.accepts("Zonk"));  
-     }  
+        assertTrue(result.accepts("acbbdabdda"));  
+        assertTrue(result.accepts("ababab"));  
+        assertTrue(result.accepts("abbaab"));   
+        assertTrue(result.accepts("accccccbbdddaab"));
+        assertFalse(result.accepts("aaa")); 
+        assertFalse(result.accepts("abba")); 
+        assertFalse(result.accepts("Zonk"));  
+    } 
+
     /**
      * Test fabryki.
-     *
-  public void testFactory() {
+     */
+    public void testFactory() {
 
-        Factory factory = new Factory();
-        RegexpOperator operator2 = 
-                factory.createOperator(new ArrayList<String>());
+        RegexpOperatorFactory factory = new MinimumNumberOfOccurencesOperator.Factory();
+        List<String> params = new ArrayList();
+        params.add("1");
+        RegexpOperator operator2 = factory.createOperator(params);
         int arity = operator2.arity();
         assertEquals(arity, 1);
-    }*/
+    }
 }
