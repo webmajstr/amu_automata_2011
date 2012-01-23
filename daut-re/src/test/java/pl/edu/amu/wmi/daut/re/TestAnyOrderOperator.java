@@ -15,12 +15,14 @@ import java.util.ArrayList;
  * Test klasy AnyOrderOperator.
  */
 public class TestAnyOrderOperator extends TestCase {
-    /**
+
+	/**
      * Test konstruktora AnyOrderOperator.
      */
     public void testAnyOrderOperator() {
         AnyOrderOperator operator = new AnyOrderOperator();
     }
+
     /**
      * Test metody createAutomatonFromTwoAutomaton.
      */
@@ -75,6 +77,7 @@ public class TestAnyOrderOperator extends TestCase {
         assertFalse(result1.accepts("asd"));
         assertFalse(result1.accepts("epsilon"));
     }
+
     /**
      * Test fabryki.
      */
