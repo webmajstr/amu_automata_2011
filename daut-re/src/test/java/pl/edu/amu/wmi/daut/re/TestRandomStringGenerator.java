@@ -17,9 +17,11 @@ public class TestRandomStringGenerator extends TestCase {
      * Pusty alfabet.
      */
     public final void testNullAlphabet() {
-    	RandomStringGenerator generator = new RandomStringGenerator(null);
-    	List<String>  randomWords = generateRandomWords(generator, N);
-    	assertTrue(listContains(randomWords, ""));
+        try {
+            new RandomStringGenerator(null);
+            fail("Creating null alphabet shouldn't be available");
+        } catch (IllegalArgumentException e) {
+        }
     }
 
     /**
