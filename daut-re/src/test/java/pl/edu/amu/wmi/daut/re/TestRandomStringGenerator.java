@@ -18,7 +18,8 @@ public class TestRandomStringGenerator extends TestCase {
      */
     public final void testNullAlphabet() {
     	RandomStringGenerator generator = new RandomStringGenerator(null);
-    	assertTrue(generator.isEmpty());
+    	List<String>  randomWords = generateRandomWords(generator, N);
+    	assertTrue(listContains(randomWords, ""));
     }
 
     /**
