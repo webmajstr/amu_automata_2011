@@ -171,13 +171,16 @@ abstract class DeterministicAutomatonSpecification extends AutomatonSpecificatio
     }
 
     /**
-     * Pobiera automat na wejsciu.
-     * Zwraca zminimalizowany automat
+     * Pobiera automat na wejściu.
+     * Zwraca zminimalizowany automat. Jeżeli automat był nie pełny, zostanie
+     * dodany stan śmietnik. W takiej sytuacji funkcja zwróci automat
+     * o liczbie stanów o jeden większej.
      */
     public void makeMinimal(
             DeterministicAutomatonSpecification automatonToBeMinimized,
             String alphabet) {
 
+        automatonToBeMinimized.makeFull(alphabet);
         List<State> states = automatonToBeMinimized.allStates();
         List<State> uselessStates =  automatonToBeMinimized.returnUselessStates();
         HashMap<State, Integer> indexStates = new HashMap<State, Integer>();
