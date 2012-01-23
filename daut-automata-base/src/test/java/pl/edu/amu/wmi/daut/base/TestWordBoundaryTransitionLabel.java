@@ -3,8 +3,8 @@ package pl.edu.amu.wmi.daut.base;
 import junit.framework.TestCase;
 
 /**
-* Klasa testujaca klase WordBoundaryTransitionLabel.
-*/
+ * Klasa testujaca klase WordBoundaryTransitionLabel.
+ */
 public class TestWordBoundaryTransitionLabel extends TestCase {
 
     /**
