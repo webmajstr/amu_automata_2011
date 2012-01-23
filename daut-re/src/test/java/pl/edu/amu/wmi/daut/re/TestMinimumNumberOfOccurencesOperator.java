@@ -145,9 +145,9 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     /**
      * Test automatu akceptujący słowo puste
      */
-   
+    
     public final void testZeroRepeats() {
-         
+        
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
          
         MinimumNumberOfOccurencesOperator oper =
@@ -157,16 +157,16 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
             new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
           
-        assertTrue(result.accepts(""));  
-        assertFalse(result.accepts("a"));  
-        assertFalse(result.accepts("aaa")); 
-        assertFalse(result.accepts("Zonk"));  
-    }   
+        assertTrue(result.accepts(""));
+        assertFalse(result.accepts("a"));
+        assertFalse(result.accepts("aaa"));
+        assertFalse(result.accepts("Zonk"));
+    }
 
     /**
      *  Automat akceptuje słowo (ac^nb)||(bd^na)
-     */ 
-    
+     */
+
     public final void testAlternativeLoops() {
          
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
