@@ -23,17 +23,20 @@ public class GrammarUtils {
                         == GrammarNonterminalSymbol.class)
                         && (regula.getRhsSecondSymbol().getClass()
                                 == GrammarNonterminalSymbol.class)) {
-                    wynik = true; 
+                    wynik = true;
                 } else {
-                        wynik = false; }
+                        wynik = false;
+                        }
                 } else if (regula.getArity() == 1) {
                     if (regula.getRhsFirstSymbol().getClass()
                             == GrammarTerminalSymbol.class) {
-                        wynik = true; 
+                        wynik = true;
                 } else {
-                        wynik = false; }
+                        wynik = false;
+                        }
             } else {
-                wynik = false; }
+                wynik = false;
+                }
         }
         return wynik;
     }
