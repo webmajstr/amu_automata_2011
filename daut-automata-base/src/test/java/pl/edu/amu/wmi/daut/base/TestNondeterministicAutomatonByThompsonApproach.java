@@ -273,7 +273,7 @@ public class TestNondeterministicAutomatonByThompsonApproach extends TestCase {
 
    /**
      * Dziewiąty test (automat akceptuje liczby nieujemne
-     * podzielne przez 3 i pomija nieznaczące zera)
+     * podzielne przez 3 i pomija nieznaczące zera).
      */
     public final void testNonnegativeNumberDivisibleByThree() {
         final AutomatonSpecification spec = new NaiveAutomatonSpecification();
@@ -282,7 +282,7 @@ public class TestNondeterministicAutomatonByThompsonApproach extends TestCase {
         State q1a = spec.addState();
         State q2a = spec.addState();
         State q3a = spec.addState();
-	
+
 	spec.addTransition(q0a, q1a, new CharTransitionLabel('1'));
 	spec.addTransition(q0a, q1a, new CharTransitionLabel('4'));
 	spec.addTransition(q0a, q1a, new CharTransitionLabel('7'));
@@ -339,5 +339,6 @@ public class TestNondeterministicAutomatonByThompsonApproach extends TestCase {
         assertTrue(automaton.accepts("-3123"));
         assertFalse(automaton.accepts(""));
         assertFalse(automaton.accepts("-0301"));
+	assertFalse(automaton.accepts("-0302"));
     }
 }
