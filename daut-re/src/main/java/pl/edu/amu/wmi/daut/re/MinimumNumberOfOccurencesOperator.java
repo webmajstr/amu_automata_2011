@@ -7,8 +7,8 @@ import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
 /**
-* Klasa reprezentujaca operator '{n,}' z wyrazen regularnych.
-*/
+ * Klasa reprezentujaca operator '{n,}' z wyrazen regularnych.
+ */
 public class MinimumNumberOfOccurencesOperator extends UnaryRegexpOperator {
 
     private int numberOfOccurences;
@@ -58,7 +58,7 @@ public class MinimumNumberOfOccurencesOperator extends UnaryRegexpOperator {
         return newAutomaton;
     }
 
-     /**
+    /**
      * Fabryka operatora.
      */
     public static class Factory extends UnaryRegexpOperatorFactory {
