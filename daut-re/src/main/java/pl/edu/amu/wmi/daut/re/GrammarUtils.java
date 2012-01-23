@@ -3,41 +3,37 @@ package pl.edu.amu.wmi.daut.re;
 import java.util.List;
 
 /**
- * @author dyskograf
- * Klasa przechowująca narzędzia do obsługi gramatyk..
+ * @author dyskograf Klasa przechowująca narzędzia do obsługi gramatyk..
  */
 public class GrammarUtils {
 
     /**
-     * Metoda sprawdzająca, czy podana gramatyka jest w postaci normalnej Chomsky'ego.
+     * Metoda sprawdzająca, czy podana gramatyka jest w postaci normalnej
+     * Chomsky'ego.
      */
     public boolean isChomsky(Grammar g) {
 
-        List<GrammarRule> reguly = g.allRules();
-        boolean wynik = false;
+        List<GrammarRule> rules = g.allRules();
+        boolean outcome = false;
 
-        for (int i = 0; i == reguly.size(); i++) {
-            GrammarRule regula = reguly.get(i);
-            if (regula.getArity() == 2) {
-                if ((regula.getRhsFirstSymbol().getClass()
-                        == GrammarNonterminalSymbol.class)
-                        && (regula.getRhsSecondSymbol().getClass()
-                                == GrammarNonterminalSymbol.class)) {
-                    wynik = true;
+        for (GrammarRule rule : rules) {
+            if (rule.getArity() == 2) {
+                if (!(rule.getRhsFirstSymbol().isTerminalSymbol())
+                        && !(rule.getRhsSecondSymbol().isTerminalSymbol())) {
+                    outcome = true;
                 } else {
-                        wynik = false;
-                        }
-                } else if (regula.getArity() == 1) {
-                    if (regula.getRhsFirstSymbol().getClass()
-                            == GrammarTerminalSymbol.class) {
-                        wynik = true;
-                } else {
-                        wynik = false;
-                        }
-            } else {
-                wynik = false;
+                    outcome = false;
                 }
+            } else if (rule.getArity() == 1) {
+                if (rule.getRhsFirstSymbol().isTerminalSymbol()) {
+                    outcome = true;
+                } else {
+                    outcome = false;
+                }
+            } else {
+                outcome = false;
+            }
         }
-        return wynik;
+        return outcome;
     }
 }
