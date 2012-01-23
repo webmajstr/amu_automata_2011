@@ -18,8 +18,8 @@ import java.util.List;
 public class TestMinimumNumberOfOccurencesOperator extends TestCase {
 
     /**
-    * Automat z jednym przejściem na dwóch stanach.
-    */
+     * Automat z jednym przejściem na dwóch stanach.
+     */
     public final void TestTwoStatesOneTransitionLabel() {
 
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
@@ -49,8 +49,8 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     }
 
     /**
-    * Automat akceptuje słowa a(b^n)a.
-    */
+     * Automat akceptuje słowa a(b^n)a.
+     */
     public final void testExemplaryAutomaton() {
 
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
@@ -79,13 +79,13 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
         assertTrue(result.accepts("aaabaabbaabbbaabbbba"));
         assertFalse(result.accepts("abc"));
         assertFalse(result.accepts("aa"));
-        assertFalse(result.accepts("ManchesterUnited"));
+        assertFalse(result.accepts("LegueOfLegends"));
     }
 
 
     /**
-    * Pusty automat.
-    */
+     * Pusty automat.
+     */
     public final void testEmptyAutomaton() {
          
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
@@ -105,9 +105,9 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     }    
 
     /**
-    * Automat z trzema stanami, od q0 wychodzą dwam przejścia do q1 i q2
-    * stany te są stanami akceptującymi
-    */
+     * Automat z trzema stanami, od q0 wychodzą dwam przejścia do q1 i q2
+     * stany te są stanami akceptującymi
+     */
 
     public final void testThreeStatesTwoFinalStates() {
     
@@ -142,7 +142,10 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
         assertFalse(result.accepts("ZlyTekst"));  
     }
 
-
+    /**
+     * Test automatu akceptujący słowo puste
+     */
+   
     public final void testZeroRepeats() {
          
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
@@ -161,8 +164,8 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     }   
 
     /**
-    *  Automat akceptuje słowo (ac^nb)||(bd^na)
-    */ 
+     *  Automat akceptuje słowo (ac^nb)||(bd^na)
+     */ 
     
     public final void testAlternativeLoops() {
          
