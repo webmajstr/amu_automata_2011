@@ -19,8 +19,8 @@ public class GrammarUtils {
             if (rule.getArity() > 2
                     || rule.getArity() == 0
                     || rule.getRhsSecondSymbol().isTerminalSymbol()
-                    || (rule.getRhsFirstSymbol().isTerminalSymbol() && 
-                            !(rule.getRhsSecondSymbol().isTerminalSymbol()))) {
+                    || (rule.getRhsFirstSymbol().isTerminalSymbol()
+                            && !(rule.getRhsSecondSymbol().isTerminalSymbol()))) {
                 return false;
             }
         }
