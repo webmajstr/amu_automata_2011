@@ -21,6 +21,7 @@ public class TestRandomStringGenerator extends TestCase {
             new RandomStringGenerator(null);
             fail("Creating null alphabet shouldn't be available");
         } catch (IllegalArgumentException e) {
+        	rethrow;
         }
     }
 
