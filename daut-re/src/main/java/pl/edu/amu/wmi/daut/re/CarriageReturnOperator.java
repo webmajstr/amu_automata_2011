@@ -23,7 +23,9 @@ public class CarriageReturnOperator extends RegexpOperator {
 
         return createFixedAutomaton();
     }
-
+ /**
+  * Metoda budująca automat. 
+  */
         public AutomatonSpecification createFixedAutomaton() {
         return new
              NaiveAutomatonSpecification().makeOneTransitionAutomaton('\13');
