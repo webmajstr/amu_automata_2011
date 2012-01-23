@@ -10,20 +10,19 @@ import junit.framework.TestCase;
 public class CompareExtendedPosixRegexpWithJavaRegexp extends TestCase {
 
     /**
-* Metoda która określoną liczbę razy losuje napis nad alfabetem alphabet
-* i porównuje, czy ExtendedPosixRegexp zwróci tę samą odpowiedź,
-* co wyrażenia regularne z Javy odnośnie do pasowania/niepasowania napisu.
-*/
+     * Metoda która określoną liczbę razy losuje napis nad alfabetem alphabet
+     * i porównuje, czy ExtendedPosixRegexp zwróci tę samą odpowiedź,
+     * co wyrażenia regularne z Javy odnośnie do pasowania/niepasowania napisu.
+     */
     public static void testRegexp(String regexp, String alphabet) {
 
         int NUMBER_OF_DRAWS = 500;
-        String text;
         ExtendedPosixRegexp epRegexp = new ExtendedPosixRegexp(regexp);
         boolean epRegexpMatch, javaRegexpMatch;
 
         for (int i = 0; i < NUMBER_OF_DRAWS; i++) {
 
-            text = new RandomStringGenerator(alphabet).getRandomString();
+            String text = new RandomStringGenerator(alphabet).getRandomString();
             epRegexpMatch = epRegexp.accepts(text);
             javaRegexpMatch = Pattern.matches("^(" + regexp + ")$", text);
 
