@@ -1,6 +1,7 @@
 package pl.edu.amu.wmi.daut.re;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import junit.framework.TestCase;
@@ -14,7 +15,7 @@ public class TestCyk extends TestCase {
     private HashMap<String, GrammarTerminalSymbol> tSymbol = new HashMap<String,
             GrammarTerminalSymbol>();
     private List<GrammarRule> rules = new ArrayList<GrammarRule>();
-    private List<GrammarTerminalSymbol> word = new ArrayList<GrammarTerminalSymbol>();
+    
     /**
      * Generowanie symobli terminalnych i nieterminalnych.
      */
@@ -32,18 +33,14 @@ public class TestCyk extends TestCase {
     public final void testCyk1() {
         generateSymobols();
         rules.clear();
-        word.clear();
         rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("A"), ntSymbol.get("C")));
         rules.add(new GrammarRule(ntSymbol.get("C"), ntSymbol.get("S"), ntSymbol.get("B")));
         rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("A"), ntSymbol.get("B")));
         rules.add(new GrammarRule(ntSymbol.get("A"), tSymbol.get("a")));
         rules.add(new GrammarRule(ntSymbol.get("B"), tSymbol.get("b")));
         Cyk cyk = new Cyk(new Grammar(rules, ntSymbol.get("S")));
-        word.add(tSymbol.get("a"));
-        word.add(tSymbol.get("a"));
-        word.add(tSymbol.get("b"));
-        word.add(tSymbol.get("b"));
-        assertTrue(cyk.accepts(word));
+        assertTrue(cyk.accepts(Arrays.<GrammarTerminalSymbol>asList(tSymbol.get("a"), tSymbol.get("a"), tSymbol.get("b"), tSymbol.get("b"))));
+        assertFalse(cyk.accepts(Arrays.<GrammarTerminalSymbol>asList(tSymbol.get("a"), tSymbol.get("a"), tSymbol.get("b"), tSymbol.get("b"), tSymbol.get("b"))));
     }
     /**
      * Drugi test klasy Cyk.
@@ -51,7 +48,6 @@ public class TestCyk extends TestCase {
     public final void testCyk2() {
         generateSymobols();
         rules.clear();
-        word.clear();
         rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("A"), ntSymbol.get("B")));
         rules.add(new GrammarRule(ntSymbol.get("S"), ntSymbol.get("B"), ntSymbol.get("C")));
         rules.add(new GrammarRule(ntSymbol.get("A"), ntSymbol.get("B"), ntSymbol.get("A")));
@@ -61,10 +57,7 @@ public class TestCyk extends TestCase {
         rules.add(new GrammarRule(ntSymbol.get("C"), ntSymbol.get("A"), ntSymbol.get("B")));
         rules.add(new GrammarRule(ntSymbol.get("C"), tSymbol.get("a")));
         Cyk cyk = new Cyk(new Grammar(rules, ntSymbol.get("S")));
-        word.add(tSymbol.get("a"));
-        word.add(tSymbol.get("b"));
-        word.add(tSymbol.get("a"));
-        word.add(tSymbol.get("b"));
-        assertFalse(cyk.accepts(word));
+        assertFalse(cyk.accepts(Arrays.<GrammarTerminalSymbol>asList(tSymbol.get("a"), tSymbol.get("b"), tSymbol.get("a"), tSymbol.get("b"))));
+        assertTrue(cyk.accepts(Arrays.<GrammarTerminalSymbol>asList(tSymbol.get("b"), tSymbol.get("a"))));
     }
 }
