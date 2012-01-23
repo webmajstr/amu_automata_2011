@@ -8,7 +8,7 @@ import pl.edu.amu.wmi.daut.re.CarriageReturnOperator.Factory;
 
 /**
  *
- * Test klasy CarriageReturnOperator
+ * Test klasy CarriageReturnOperator.
  */
 public class TestCarriageReturnOperator extends TestCase {
 
