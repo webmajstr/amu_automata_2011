@@ -21,9 +21,9 @@ public class AnyCharOperator extends NullaryRegexpOperator {
         return automaton;
     }
 
-    /**
-    * Fabryka operatora.
-    */
+     /**
+     * Fabryka operatora.
+     */
     public static class Factory extends NullaryRegexpOperatorFactory {
 
         @Override
@@ -37,11 +37,12 @@ public class AnyCharOperator extends NullaryRegexpOperator {
     }
 
     /**
-    * Metoda toString().
-    */
+     * Metoda toString().
+     */
     @Override
     public String toString() {
         return "ANY_CHAR_OPERATOR";
     }
+
 }
 
