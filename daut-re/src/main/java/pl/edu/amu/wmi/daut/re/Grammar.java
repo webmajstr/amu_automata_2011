@@ -17,6 +17,7 @@ public class Grammar {
      */
     public Grammar(List<GrammarRule> rules, GrammarNonterminalSymbol startSymbol) {
         this.startSymbol = startSymbol;
+        this.rules = new Vector<GrammarRule>();
         for (GrammarRule rule : rules) {
             this.rules.add(rule);
         }
