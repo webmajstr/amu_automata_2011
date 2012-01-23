@@ -18,7 +18,7 @@ public class TestAtLeastOneOperator extends TestCase {
     /**
      * Test metody createAutomatonFromOneAutomaton.
      */
-        public final void testCreateAutomatonFromOneAutomaton() {
+    public final void testCreateAutomatonFromOneAutomaton() {
 
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
 
@@ -49,11 +49,11 @@ public class TestAtLeastOneOperator extends TestCase {
         assertFalse(result.accepts("baaaaaaaaa"));
         assertFalse(result.accepts("cojatestujem"));
         assertFalse(result.accepts("bartlomiejburczymucha"));
-        }
+    }
     /**
-* Test fabryki.
-*/
-public final void testFactory() {
+     * Test fabryki.
+     */
+    public final void testFactory() {
 
         Factory factory = new Factory();
         ArrayList<String> params = new ArrayList<String>();
