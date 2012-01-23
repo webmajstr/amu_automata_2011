@@ -1,8 +1,8 @@
 package pl.edu.amu.wmi.daut.base;
 
 import java.nio.CharBuffer;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import junit.framework.TestCase;
 
 /**
