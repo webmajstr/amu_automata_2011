@@ -15,6 +15,7 @@ public class WordBoundaryTransitionLabel extends ZeroLengthConditionalTransition
             return true;
         return false;
     }
+
     @Override
     public boolean doCheckContext(String s, int position) {
         char a;
@@ -44,14 +45,17 @@ public class WordBoundaryTransitionLabel extends ZeroLengthConditionalTransition
         }
         return false;
     };
+
     @Override
     public boolean canAcceptCharacter(char c) {
         return false;
     };
+
     @Override
     public boolean isEmpty() {
         return false;
     }
+
     @Override
     public String toString() {
         return "WordBoundary";
