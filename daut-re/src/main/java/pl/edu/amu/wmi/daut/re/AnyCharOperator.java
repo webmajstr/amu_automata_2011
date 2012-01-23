@@ -7,8 +7,8 @@ import pl.edu.amu.wmi.daut.base.State;
 import java.util.List;
 
 /**
-* Klasa reprezentująca operator '.' z wyrażeń regularnych (dowolny znak).
-*/
+ * Klasa reprezentująca operator '.' z wyrażeń regularnych (dowolny znak).
+ */
 public class AnyCharOperator extends NullaryRegexpOperator {
     @Override
     public AutomatonSpecification createFixedAutomaton() {
