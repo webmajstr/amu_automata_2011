@@ -316,8 +316,9 @@ public class TestDeterministicAutomaton extends TestCase {
 
         assertEquals(spec.countStates(), 2);
     }
-    /*
-     * Test metody minimalizujacej automat.
+
+    /**
+     * Test dla metody minimalizującej automat.
      */
     public final void testMakeMinimal5() {
         DeterministicAutomatonSpecification spec = new NaiveDeterministicAutomatonSpecification();
