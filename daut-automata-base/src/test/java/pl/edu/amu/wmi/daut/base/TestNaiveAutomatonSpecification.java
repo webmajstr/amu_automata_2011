@@ -133,14 +133,11 @@ public class TestNaiveAutomatonSpecification extends TestCase {
      * Test metody tworzącej prosty automat.
      */
     public final void testmakeOneLoopAutomaton(char c) {
-        NaiveAutomatonSpecification spec = new NaiveAutomatonSpecification();
+        AutomatonSpecification spec = new NaiveAutomatonSpecification();
 
         //budowanie
 
-        State s0 = spec.addState();
-        spec.addLoop(s0, new CharTransitionLabel('c'));
-        spec.markAsInitial(s0);
-        spec.markAsFinal(s0);
+        spec = spec.makeOneLoopAutomaton(c);
 
         //testowanie
 
