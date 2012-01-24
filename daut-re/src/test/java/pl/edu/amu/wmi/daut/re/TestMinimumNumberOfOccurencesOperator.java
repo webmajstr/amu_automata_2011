@@ -43,7 +43,7 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
         assertTrue(result.accepts("aaaaa"));
 	assertTrue(result.accepts("aaaaaaaaaaaa"));
         assertFalse(result.accepts("aa"));
-	assertFalse(result.accepts("a"));
+        assertFalse(result.accepts("a"));
         assertFalse(result.accepts("LeagueOfLegends"));
     }
 
