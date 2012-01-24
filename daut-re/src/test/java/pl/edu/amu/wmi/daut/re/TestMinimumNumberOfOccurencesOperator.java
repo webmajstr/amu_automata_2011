@@ -7,7 +7,6 @@ import pl.edu.amu.wmi.daut.base.NondeterministicAutomatonByThompsonApproach;
 import pl.edu.amu.wmi.daut.base.State;
 import pl.edu.amu.wmi.daut.base.CharTransitionLabel;
 import junit.framework.TestCase;
-import pl.edu.amu.wmi.daut.re.TestMinimumNumberOfOccurencesOperator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +19,8 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     /**
      * Automat z jednym przejściem na dwóch stanach.
      */
-    public final void TestTwoStatesOneTransitionLabel() {
-        
+    public final void testTwoStatesOneTransitionLabel() {
+
         AutomatonSpecification automaton = new NaiveAutomatonSpecification();
 
         State q0 = automaton.addState();
@@ -97,16 +96,16 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
             new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
 
-        assertFalse(result.accepts("aaaaaaaaaaaaaaaaaaaaaaaa"));  
-        assertFalse(result.accepts(""));  
-        assertFalse(result.accepts("a"));  
-        assertFalse(result.accepts("aaa")); 
-        assertFalse(result.accepts("Zonk"));  
-    }    
+        assertFalse(result.accepts("aaaaaaaaaaaaaaaaaaaaaaaa"));
+        assertFalse(result.accepts(""));
+        assertFalse(result.accepts("a"));
+        assertFalse(result.accepts("aaa"));
+        assertFalse(result.accepts("Zonk"));
+    }
 
     /**
-     * Automat z trzema stanami, od q0 wychodzą dwam przejścia do q1 i q2
-     * stany te są stanami akceptującymi
+     * Automat z trzema stanami, od q0 wychodzą dwam przejścia do q1 i q2.
+     * Stany te są stanami akceptującymi.
      */
 
     public final void testThreeStatesTwoFinalStates() {
@@ -139,11 +138,11 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
 	assertFalse(result.accepts("a"));
         assertFalse(result.accepts("b"));
         assertFalse(result.accepts(""));
-        assertFalse(result.accepts("ZlyTekst"));  
+        assertFalse(result.accepts("ZlyTekst"));
     }
 
     /**
-     * Test automatu akceptujący słowo puste
+     * Test automatu akceptujący słowo puste.
      */
 
     public final void testZeroRepeats() {
@@ -164,7 +163,7 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     }
 
     /**
-     *  Automat akceptuje słowo (ac^nb)||(bd^na)
+     *  Automat akceptuje słowo (ac^nb)||(bd^na).
      */
 
     public final void testAlternativeLoops() {
@@ -196,14 +195,14 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
             new NondeterministicAutomatonByThompsonApproach(
                 oper.createAutomatonFromOneAutomaton(automaton));
 
-        assertTrue(result.accepts("acbbdabdda"));  
-        assertTrue(result.accepts("ababab"));  
-        assertTrue(result.accepts("abbaab"));   
+        assertTrue(result.accepts("acbbdabdda"));
+        assertTrue(result.accepts("ababab"));
+        assertTrue(result.accepts("abbaab"));
         assertTrue(result.accepts("accccccbbdddaab"));
-        assertFalse(result.accepts("aaa")); 
-        assertFalse(result.accepts("abba")); 
-        assertFalse(result.accepts("Zonk"));  
-    } 
+        assertFalse(result.accepts("aaa"));
+        assertFalse(result.accepts("abba"));
+        assertFalse(result.accepts("Zonk"));
+    }
 
     /**
      * Test fabryki.
