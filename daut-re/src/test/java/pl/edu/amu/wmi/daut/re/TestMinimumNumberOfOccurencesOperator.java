@@ -41,7 +41,7 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
         assertTrue(result.accepts("aaa"));
         assertTrue(result.accepts("aaaa"));
         assertTrue(result.accepts("aaaaa"));
-	assertTrue(result.accepts("aaaaaaaaaaaa"));
+        assertTrue(result.accepts("aaaaaaaaaaaa"));
         assertFalse(result.accepts("aa"));
         assertFalse(result.accepts("a"));
         assertFalse(result.accepts("LeagueOfLegends"));
@@ -134,8 +134,8 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
         assertTrue(result.accepts("bbabab"));
         assertTrue(result.accepts("aababa"));
         assertFalse(result.accepts("ab"));
-	assertFalse(result.accepts("aa"));
-	assertFalse(result.accepts("a"));
+        assertFalse(result.accepts("aa"));
+        assertFalse(result.accepts("a"));
         assertFalse(result.accepts("b"));
         assertFalse(result.accepts(""));
         assertFalse(result.accepts("ZlyTekst"));
