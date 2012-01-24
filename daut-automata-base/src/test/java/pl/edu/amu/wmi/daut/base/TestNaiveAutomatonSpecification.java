@@ -668,7 +668,7 @@ public class TestNaiveAutomatonSpecification extends TestCase {
         spec.markAsInitial(q1b);
         
         spec.unmarkAsFinalState(q1b);
-        assertFalse(spec.isFinal(q0b));
+        assertTrue(spec.isFinal(q0b));
         
         //test 3
         State q0c = spec.addState();
