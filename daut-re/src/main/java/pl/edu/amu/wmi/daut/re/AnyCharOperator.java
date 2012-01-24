@@ -45,3 +45,4 @@ public class AnyCharOperator extends NullaryRegexpOperator {
     }
 
 }
+

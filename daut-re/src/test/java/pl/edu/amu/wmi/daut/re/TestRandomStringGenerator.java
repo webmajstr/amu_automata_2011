@@ -1,8 +1,8 @@
-package pl.edu.amu.wmi.daut.base;
+package pl.edu.amu.wmi.daut.re;
 
 import java.nio.CharBuffer;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import junit.framework.TestCase;
 
 /**
@@ -14,10 +14,33 @@ public class TestRandomStringGenerator extends TestCase {
 
     /**
      * Metoda testująca RandomStringGenerator.
+     * Pusty alfabet.
+     */
+    public final void testNullAlphabet() {
+        try {
+            new RandomStringGenerator(null);
+            fail("Creating null alphabet shouldn't be available");
+        } catch (IllegalArgumentException e) {
+        return;
+        }
+    }
+
+    /**
+     * Metoda testująca RandomStringGenerator.
      * Puste słowo.
      */
     public void testIsEmptyWordPresent() {
         RandomStringGenerator generator = new RandomStringGenerator("ABCD");
+        List<String>  randomWords = generateRandomWords(generator, N);
+        assertTrue(listContains(randomWords, ""));
+    }
+
+     /**
+     * Metoda testująca RandomStringGenerator.
+     * Puste słowo, pusty alfabet.
+     */
+    public void testIsEmptyWordPresentNullAlphabet() {
+        RandomStringGenerator generator = new RandomStringGenerator("");
         List<String>  randomWords = generateRandomWords(generator, N);
         assertTrue(listContains(randomWords, ""));
     }
