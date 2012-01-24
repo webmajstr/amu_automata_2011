@@ -639,7 +639,7 @@ public class TestNaiveAutomatonSpecification extends TestCase {
 
         assertFalse(automat.isInfinite());
     }
-    
+
      /**
      * Test metody testUnmark.
      */

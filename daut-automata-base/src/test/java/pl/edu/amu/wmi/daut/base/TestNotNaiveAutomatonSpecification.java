@@ -94,7 +94,7 @@ public class TestNotNaiveAutomatonSpecification extends TestCase {
         assertEquals(spec.countStates(), 4);
         assertTrue(spec.isFull("ab"));
     }
-    
+
      /**
      * Test metody testUnmark.
      */
