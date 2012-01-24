@@ -270,7 +270,7 @@ public class TestDeterministicAutomaton extends TestCase {
         // tu właściwy test
         spec2.makeMinimal(spec, "abcd");
 
-        AutomatonByRecursion automaton = new AutomatonByRecursion(spec);
+        AutomatonByRecursion automaton = new AutomatonByRecursion(spec2);
         assertTrue(automaton.accepts("ac"));
         assertTrue(automaton.accepts("bd"));
         assertFalse(automaton.accepts("ad"));
@@ -306,7 +306,7 @@ public class TestDeterministicAutomaton extends TestCase {
         // tu właściwy test
         spec2.makeMinimal(spec, "a");
 
-        AutomatonByRecursion automaton = new AutomatonByRecursion(spec);
+        AutomatonByRecursion automaton = new AutomatonByRecursion(spec2);
         assertTrue(automaton.accepts("a"));
         assertTrue(automaton.accepts("aa"));
         assertTrue(automaton.accepts("aaa"));
@@ -317,5 +317,32 @@ public class TestDeterministicAutomaton extends TestCase {
         assertEquals(spec.countStates(), 2);
     }
 
+    /**
+     * Test dla metody minimalizującej automat.
+     */
+    public final void testMakeMinimal5() {
+        DeterministicAutomatonSpecification spec = new NaiveDeterministicAutomatonSpecification();
+        DeterministicAutomatonSpecification spec2 = new NaiveDeterministicAutomatonSpecification();
+
+        State s0 = spec.addState();
+        State s1 = spec.addState();
+        State s2 = spec.addState();
+
+        spec.markAsInitial(s0);
+        spec.markAsFinal(s2);
+
+        spec.addTransition(s0, s1, new CharTransitionLabel('b'));
+        spec.addLoop(s1, new CharTransitionLabel('b'));
+        spec.addTransition(s0, s2, new CharTransitionLabel('a'));
+        spec.addTransition(s1, s2, new CharTransitionLabel('a'));
+
+        spec2.makeMinimal(spec, "ab");
+
+        AutomatonByRecursion automaton = new AutomatonByRecursion(spec2);
+
+        assertTrue(automaton.accepts("bbbba"));
+        assertTrue(automaton.accepts("a"));
+
+    }
 
 }
