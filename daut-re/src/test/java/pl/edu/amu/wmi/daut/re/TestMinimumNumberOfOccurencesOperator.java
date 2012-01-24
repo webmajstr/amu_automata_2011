@@ -104,7 +104,7 @@ public class TestMinimumNumberOfOccurencesOperator extends TestCase {
     }
 
     /**
-     * Automat z trzema stanami, od q0 wychodzą dwam przejścia do q1 i q2.
+     * Automat z trzema stanami od q0 wychodzą dwam przejścia do q1 i q2.
      * Stany te są stanami akceptującymi.
      */
 
