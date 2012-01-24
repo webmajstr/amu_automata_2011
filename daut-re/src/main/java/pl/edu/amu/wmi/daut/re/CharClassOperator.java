@@ -6,6 +6,9 @@ import pl.edu.amu.wmi.daut.base.NaiveAutomatonSpecification;
 import pl.edu.amu.wmi.daut.base.CharClassTransitionLabel;
 import pl.edu.amu.wmi.daut.base.State;
 
+/**
+ * Klasa, reprezentująca klasę znaków z wyrażeń regularnych.
+ */
 public class CharClassOperator extends NullaryRegexpOperator {
     private String charClass;
 
